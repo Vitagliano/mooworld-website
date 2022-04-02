@@ -236,10 +236,10 @@ export default function Hero() {
       <Container className="flex flex-wrap p-0">
         <div className="flex justify-center items-center w-full">
           <div className="relative z-1 top-64  flex justify-center items-center">
-            <img src="../public/img/planet.png" alt="Moo World Planet" width="50%" />
+            <img src="../public/img/Planet.png" alt="Moo World Planet" width="50%" />
           </div>
           <div className="absolute z-999 flex justify-center items-center">
-            <img src="../public/img/moo.png" alt="Moo World" width="50%" />
+            <img src="../public/img/Moo.png" alt="Moo World" width="50%" />
           </div>
         </div>
       </Container>
