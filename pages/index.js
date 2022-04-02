@@ -4,12 +4,10 @@ import Hero from "../components/hero";
 import SectionTitle from "../components/sectionTitle";
 
 import { history, benefitTwo } from "../components/data";
-import Video from "../components/video";
 import Benefits from "../components/benefits";
 import Footer from "../components/footer";
 import Cta from "../components/cta";
 import Faq from "../components/faq";
-import PopupWidget from "../components/popupWidget";
 import Roadmap from "../components/roadmap";
 export default function Home() {
   return (
@@ -31,7 +29,7 @@ export default function Home() {
         <div className="mx-auto container py-6 px-4">
           <div className="w-full flex justify-center">
             <div className="w-full backdrop-blur-lg border-[1px] border-white/10  rounded-xl md:w-11/12 xl:w-10/12 bg-gradient-to-r from-indigo-300/10 to-blue/10 md:py-8 md:px-8 px-5 py-4 xl:px-12 xl:py-16 xl:pb-8">
-              <div className="grid overflow-hidden lg grid-cols-2 grid-rows-1 gap-5 grid-flow-row ">
+              <div className="grid overflow-hidden grid-cols-1 grid-rows-2 gap-5 grid-flow-row sm:grid-cols-1 sm:grid-rows-2 lg:grid-cols-2 lg:grid-rows-1 ">
                 <SectionTitle
                   pretitle="CHAPTER ONE"
                   title="The first Moo"
@@ -52,7 +50,7 @@ export default function Home() {
                   <img
                     src="https://media.discordapp.net/attachments/953101447388602388/959840901809700884/Untitled_04-02-2022_12-30-39.png?width=901&height=670"
                     alt="Moo World"
-                    className=" rounded-xl shadow-xl border-[1px] border-white/20 w-full h-full object-cover object-center"
+                    className=" rounded-xl shadow-xl border-[1px] border-white/20 w-full h-auto lg:h-full object-cover object-center"
                   />
                 </div>
               </div>
@@ -68,30 +66,8 @@ export default function Home() {
       <Footer />
 
       {/* 
-      <Cta />
-
-      <Benefits imgPos="right" data={history} />
-        <Benefits data={benefitOne} />
-        <Benefits imgPos="right" data={benefitTwo} />
-      <SectionTitle
-        pretitle="Watch a video"
-        title="Learn how to fullfil your needs">
-        This section is to highlight a promo or demo video of your product.
-        Analysts says a landing page with video has 3% more conversion rate. So,
-        don't forget to add one. Just like this.
-      </SectionTitle>
-      <Video />
-      <SectionTitle
-        pretitle="Testimonials"
-        title="Here's what our customers said">
-        Testimonails is a great way to increase the brand trust and awareness.
-        Use this section to highlight your popular customers.
-      </SectionTitle>
-      
-      <SectionTitle pretitle="FAQ" title="Frequently Asked Questions">
-        Answer your customers possible questions here, it will increase the
-        conversion rate as well as support or chat requests.
-      </SectionTitle>
+     
+ 
       
       */}
     </>

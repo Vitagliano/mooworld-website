@@ -13,8 +13,16 @@ export default function Faq() {
             <div className="w-full rounded-xl md:w-11/12 xl:w-10/12">
               <div>
                 <Container>
-                  <div className="grid overflow-hidden lg grid-cols-2 grid-rows-1 gap-5 grid-flow-row ">
-                    <div className="w-full flex justify-center">
+                  <div className="grid overflow-hidden grid-cols-1 grid-rows-2 gap-5 grid-flow-row sm:grid-cols-1 sm:grid-rows-2 lg:grid-cols-2 lg:grid-rows-1 ">
+                    <div className="w-full h-full sm:h-full lg:h-[448px] flex justify-center items-center self-center flex-col">
+                      <div className="backdrop-blur-lg rounded-xl border-[1px] border-white/10 px-4 mb-4 bg-blue/75 flex sm:flex sm:mb-4 md:mb-4 md:flex lg:hidden">
+                        <SectionTitle
+                          className="!p-0"
+                          pretitle="Have a question? FIND THE ANSWERS HERE"
+                          title="F.A.Q."
+                          align="left"
+                        ></SectionTitle>
+                      </div>
                       <img
                         src="./img/thinkMoo.png"
                         alt="Moo World"
@@ -23,7 +31,7 @@ export default function Faq() {
                     </div>
 
                     <div className="relative z-50 w-full max-w-2xl rounded-2xl">
-                      <div className="backdrop-blur-lg rounded-xl border-[1px] border-white/10 px-4 mb-4 bg-blue/75">
+                      <div className="backdrop-blur-lg rounded-xl border-[1px] border-white/10 px-4 mb-4 bg-blue/75 hidden sm:hidden md:hidden lg:flex">
                         <SectionTitle
                           className="!p-0"
                           pretitle="Have a question? FIND THE ANSWERS HERE"

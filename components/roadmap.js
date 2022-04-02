@@ -21,13 +21,13 @@ export default function Roadmap() {
                   ></SectionTitle>
                 </div>
                 <Container>
-                  <div className="relative z-50 px-12 py-12  mb-4  bg-gradient-to-r from-indigo-300/10 to-blue/10 backdrop-blur-lg border-[1px] border-white/10  rounded-xl">
+                  <div className="relative z-50 px-6 py-6 sm:px-6 sm:py-6 lg:px-12 lg:py-12  mb-4  bg-gradient-to-r from-indigo-300/10 to-blue/10 backdrop-blur-lg border-[1px] border-white/10  rounded-xl">
                     <p className="text-xl font-regular  text-white">
                       Phase 1 - 🐮 The first Moo
                     </p>
                     <ol className="mt-3 divide-y divider-gray-200 dark:divide-gray-700">
                       <li>
-                        <a className="block items-center p-3 sm:flex hover:bg-blue/80 rounded-xl">
+                        <a className="flex items-center p-3 sm:flex hover:bg-blue/80 rounded-xl mt-2">
                           <img
                             className="mr-3 mb-3 w-12 h-12 rounded-full sm:mb-0"
                             src="./img/planetIcon.png"
@@ -45,7 +45,7 @@ export default function Roadmap() {
                         </a>
                       </li>
                       <li>
-                        <a className="block items-center p-3 sm:flex hover:bg-blue/80 rounded-xl">
+                        <a className="flex items-center p-3 sm:flex hover:bg-blue/80 rounded-xl mt-2">
                           <img
                             className="mr-3 mb-3 w-12 h-12 rounded-full sm:mb-0"
                             src="./img/planetIcon.png"
@@ -63,7 +63,7 @@ export default function Roadmap() {
                         </a>
                       </li>
                       <li>
-                        <a className="block items-center p-3 sm:flex hover:bg-blue/80 rounded-xl">
+                        <a className="flex items-center p-3 sm:flex hover:bg-blue/80 rounded-xl mt-2">
                           <img
                             className="mr-3 mb-3 w-12 h-12 rounded-full sm:mb-0"
                             src="./img/planetIcon.png"
@@ -81,7 +81,7 @@ export default function Roadmap() {
                         </a>
                       </li>
                       <li>
-                        <a className="block items-center p-3 sm:flex hover:bg-blue/80 rounded-xl">
+                        <a className="flex items-center p-3 sm:flex hover:bg-blue/80 rounded-xl mt-2">
                           <img
                             className="mr-3 mb-3 w-12 h-12 rounded-full sm:mb-0"
                             src="./img/planetIcon.png"
@@ -99,7 +99,7 @@ export default function Roadmap() {
                         </a>
                       </li>
                       <li>
-                        <a className="block items-center p-3 sm:flex hover:bg-blue/80 rounded-xl">
+                        <a className="flex items-center p-3 sm:flex hover:bg-blue/80 rounded-xl mt-2">
                           <img
                             className="mr-3 mb-3 w-12 h-12 rounded-full sm:mb-0"
                             src="./img/planetIcon.png"
@@ -118,7 +118,7 @@ export default function Roadmap() {
                         </a>
                       </li>
                       <li>
-                        <a className="block items-center p-3 sm:flex hover:bg-blue/80 rounded-xl">
+                        <a className="flex items-center p-3 sm:flex hover:bg-blue/80 rounded-xl mt-2">
                           <img
                             className="mr-3 mb-3 w-12 h-12 rounded-full sm:mb-0"
                             src="./img/planetIcon.png"
@@ -137,7 +137,7 @@ export default function Roadmap() {
                       </li>
                     </ol>
                   </div>
-                  <div className="relative z-50 px-12 py-12  mb-4  bg-gradient-to-r from-indigo-300/10 to-blue/10 backdrop-blur-lg border-[1px] border-white/10  rounded-xl">
+                  <div className="relative z-50 px-6 py-6 sm:px-6 sm:py-6 lg:px-12 lg:py-12  mb-4  bg-gradient-to-r from-indigo-300/10 to-blue/10 backdrop-blur-lg border-[1px] border-white/10  rounded-xl">
                     <p className="text-xl font-regular  text-white">
                       Phase 2 - 🌍 Opening of the world
                     </p>
@@ -145,7 +145,7 @@ export default function Roadmap() {
                       This phase will be revealed when the project gets to that
                     </span>
                   </div>
-                  <div className="relative z-50 px-12 py-12  mb-4  bg-gradient-to-r from-indigo-300/10 to-blue/10 backdrop-blur-lg border-[1px] border-white/10  rounded-xl">
+                  <div className="relative z-50 px-6 py-6 sm:px-6 sm:py-6 lg:px-12 lg:py-12  mb-4  bg-gradient-to-r from-indigo-300/10 to-blue/10 backdrop-blur-lg border-[1px] border-white/10  rounded-xl">
                     <p className="text-xl font-regular  text-white">
                       Phase 3 - 💰 Putting the Moo to Work
                     </p>
@@ -153,7 +153,7 @@ export default function Roadmap() {
                       This phase will be revealed when the project gets to that
                     </span>
                   </div>
-                  <div className="relative z-50 px-12 py-12  mb-4  bg-gradient-to-r from-indigo-300/10 to-blue/10 backdrop-blur-lg border-[1px] border-white/10  rounded-xl">
+                  <div className="relative z-50 px-6 py-6 sm:px-6 sm:py-6 lg:px-12 lg:py-12  mb-4  bg-gradient-to-r from-indigo-300/10 to-blue/10 backdrop-blur-lg border-[1px] border-white/10  rounded-xl">
                     <p className="text-xl font-regular  text-white">
                       Phase 4 - 🪐 New worlds for the Moo
                     </p>
@@ -161,7 +161,7 @@ export default function Roadmap() {
                       This phase will be revealed when the project gets to that
                     </span>
                   </div>
-                  <div className="relative z-50 px-12 py-12  mb-4  bg-gradient-to-r from-indigo-300/10 to-blue/10 backdrop-blur-lg border-[1px] border-white/10  rounded-xl">
+                  <div className="relative z-50 px-6 py-6 sm:px-6 sm:py-6 lg:px-12 lg:py-12  mb-4  bg-gradient-to-r from-indigo-300/10 to-blue/10 backdrop-blur-lg border-[1px] border-white/10  rounded-xl">
                     <p className="text-xl font-regular  text-white">
                       Phase 5 - 👨‍👩‍👧‍👦 Exploration, population growth and new
                       generations
