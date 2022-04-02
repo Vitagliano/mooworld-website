@@ -1,7 +1,5 @@
 import Image from "next/image";
 import Container from "./container";
-import planetImg from "../public/img/planet.png";
-import mooImg from "../public/img/moo.png";
 
 import Particles from "react-tsparticles";
 import Navbar from "./navbar";
