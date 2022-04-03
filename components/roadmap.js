@@ -25,16 +25,16 @@ export default function Roadmap() {
                     <p className="text-xl font-regular  text-white">
                       Phase 1 - 🐮 The first Moo
                     </p>
-                    <ol className="mt-3 divide-y divider-gray-200 dark:divide-gray-700">
+                    <ol className="mt-3 divide-y divide-gray-700">
                       <li>
                         <a className="flex items-center p-3 sm:flex hover:bg-blue/80 rounded-xl mt-2">
                           <img
                             className="mr-3 mb-3 w-12 h-12 rounded-full sm:mb-0"
                             src="./img/planetIcon.png"
                           />
-                          <div className="text-gray-600 dark:text-gray-400">
+                          <div className="text-gray-400">
                             <div className="text-base font-normal">
-                              <span className="font-medium text-gray-900 dark:text-white">
+                              <span className="font-medium text-white">
                                 Project presentation
                               </span>
                             </div>
@@ -50,9 +50,9 @@ export default function Roadmap() {
                             className="mr-3 mb-3 w-12 h-12 rounded-full sm:mb-0"
                             src="./img/planetIcon.png"
                           />
-                          <div className="text-gray-600 dark:text-gray-400">
+                          <div className="text-gray-400">
                             <div className="text-base font-normal">
-                              <span className="font-medium text-gray-900 dark:text-white">
+                              <span className="font-medium text-white">
                                 Community creation on Discord
                               </span>
                             </div>
@@ -68,9 +68,9 @@ export default function Roadmap() {
                             className="mr-3 mb-3 w-12 h-12 rounded-full sm:mb-0"
                             src="./img/planetIcon.png"
                           />
-                          <div className="text-gray-600 dark:text-gray-400">
+                          <div className="text-gray-400">
                             <div className="text-base font-normal">
-                              <span className="font-medium text-gray-900 dark:text-white">
+                              <span className="font-medium text-white">
                                 Roadmap
                               </span>
                             </div>
@@ -86,9 +86,9 @@ export default function Roadmap() {
                             className="mr-3 mb-3 w-12 h-12 rounded-full sm:mb-0"
                             src="./img/planetIcon.png"
                           />
-                          <div className="text-gray-600 dark:text-gray-400">
+                          <div className="text-gray-400">
                             <div className="text-base font-normal">
-                              <span className="font-medium text-gray-900 dark:text-white">
+                              <span className="font-medium text-white">
                                 Beginning of the story [1/5]
                               </span>
                             </div>
@@ -104,9 +104,9 @@ export default function Roadmap() {
                             className="mr-3 mb-3 w-12 h-12 rounded-full sm:mb-0"
                             src="./img/planetIcon.png"
                           />
-                          <div className="text-gray-600 dark:text-gray-400">
+                          <div className="text-gray-400">
                             <div className="text-base font-normal">
-                              <span className="font-medium text-gray-900 dark:text-white">
+                              <span className="font-medium text-white">
                                 Development of landing page for project
                                 presentation
                               </span>
@@ -123,9 +123,9 @@ export default function Roadmap() {
                             className="mr-3 mb-3 w-12 h-12 rounded-full sm:mb-0"
                             src="./img/planetIcon.png"
                           />
-                          <div className="text-gray-600 dark:text-gray-400">
+                          <div className="text-gray-400">
                             <div className="text-base font-normal">
-                              <span className="font-medium text-gray-900 dark:text-white">
+                              <span className="font-medium text-white">
                                 Whitelist Mint
                               </span>
                             </div>
