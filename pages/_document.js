@@ -16,7 +16,7 @@ class MyDocument extends Document {
             crossOrigin=""
           />
         </Head>
-        <body>
+        <body className="smooth-scroll">
           <Main />
           <NextScript />
         </body>
