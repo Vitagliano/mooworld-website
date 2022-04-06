@@ -40,7 +40,7 @@ export default function Footer() {
                   </div>
 
                   <div className=" flex justify-center flex-col">
-                    <div>Follow us</div>
+                    <div className="text-white">Follow us</div>
                     <div className="flex mt-5 space-x-5 text-gray-400 hover:">
                       <a
                         href="https://twitter.com/mooworldnft"

@@ -3,12 +3,10 @@ import Hero from "../components/hero";
 
 import SectionTitle from "../components/sectionTitle";
 
-import { history, benefitTwo } from "../components/data";
-import Benefits from "../components/benefits";
 import Footer from "../components/footer";
-import Cta from "../components/cta";
 import Faq from "../components/faq";
 import Roadmap from "../components/roadmap";
+import MintInfo from "../components/mintinfo";
 export default function Home() {
   return (
     <>
@@ -24,6 +22,7 @@ export default function Home() {
       </Head>
 
       <Hero />
+      <MintInfo />
 
       <div className="overflow-y-hidden relative z-50" id="chapter-one">
         <div className="mx-auto container py-6 px-4">
