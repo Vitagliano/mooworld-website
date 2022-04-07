@@ -35,6 +35,12 @@ export default function Navbar() {
               <img src="./img/aboutUsButton.png" />
             </a>
           </Link>
+
+          <Link href="https://discord.gg/mooworld">
+            <a className="relative sm:relative md:relative xl:hidden lg:hidden">
+              <img src="./img/discordButton.png" />
+            </a>
+          </Link>
         </div>
       </nav>
     </Container>
