@@ -6,7 +6,7 @@ export default function Navbar() {
     <Container>
       <nav className="relative z-50 px-8 sm:px-4 md:px-8 lg:py-8 lg:px-32 flex flex-wrap items-center justify-center sm:justify-center mx-auto lg:justify-between ">
         <div className="transition-all space-x-4 nav__item hidden sm:hidden md:hidden lg:flex xl:relative ">
-          <Link href="https://twitter.com/mooworldnft">
+          <Link href="https://twitter.com/mooworldsol">
             <a className="hover:scale-125 transition-all">
               <img src="./img/followUsButton.png" />
             </a>

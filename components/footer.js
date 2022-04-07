@@ -43,7 +43,7 @@ export default function Footer() {
                     <div className="text-white">Follow us</div>
                     <div className="flex mt-5 space-x-5 text-gray-400 hover:">
                       <a
-                        href="https://twitter.com/mooworldnft"
+                        href="https://twitter.com/mooworldsol"
                         target="_blank"
                         rel="noopener"
                       >
