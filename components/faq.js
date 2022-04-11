@@ -87,7 +87,7 @@ const faqdata = [
   {
     question: "When is the launch date?",
     answer:
-      "The launch date will be announced inside the Discord, please also follow us on Twitter for updates!",
+      "The Moo Mint will take place on April 14",
   },
   {
     question: "What is the utility behind holding Moos?",

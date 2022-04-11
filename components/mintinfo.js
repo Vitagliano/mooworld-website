@@ -21,7 +21,7 @@ export default function MintInfo() {
                   ></SectionTitle>
                 </div>
                 <Container>
-                  <div class="grid overflow-hidden lg:grid-cols-3 lg:grid-rows-1 gap-5 lg:grid-flow-row">
+                  <div class="grid overflow-hidden lg:grid-cols-4 lg:grid-rows-1 gap-4 lg:grid-flow-row">
                     <div class="backdrop-blur-lg rounded-xl border-[1px] border-white/10 bg-blue/75 flex flex-row justify-center items-center">
                       <img src="./img/supply.gif" className="w-32 h-32" />
                       <div className={`flex flex-col`}>
@@ -42,7 +42,7 @@ export default function MintInfo() {
                         </div>
 
                         <h2 className="max-w-2xl mt-3 text-3xl font-bold leading-snug tracking-tight lg:leading-tight lg:text-4xl text-white">
-                          2 $SOL
+                          2 SOL
                         </h2>
                       </div>
                     </div>
@@ -54,7 +54,18 @@ export default function MintInfo() {
                         </div>
 
                         <h2 className="max-w-2xl mt-3 text-3xl font-bold leading-snug tracking-tight lg:leading-tight lg:text-4xl text-white">
-                          04/10/2022
+                          04/14
+                        </h2>
+                      </div>
+                    </div>
+                    <div class="backdrop-blur-lg rounded-xl border-[1px] border-white/10 bg-blue/75 flex flex-row justify-center items-center">
+                      <div className={`flex flex-col`}>
+                        <div className="text-sm font-bold tracking-wider text-white uppercase">
+                          Launchpad
+                        </div>
+
+                        <h2 className="max-w-2xl mt-3 text-3xl font-bold leading-snug tracking-tight lg:leading-tight lg:text-4xl text-white">
+                          Monkelabs
                         </h2>
                       </div>
                     </div>
