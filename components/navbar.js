@@ -25,7 +25,7 @@ export default function Navbar() {
         </Link>
 
         <div className="flex flex-row sm:flex mt-4 sm:mt-4 md:mt-4 lg:mt-0 sm:flex-row md:flex-row transition-all space-x-4 lg:flex nav__item hover:scale-125">
-          <Link href="https://twitter.com/mooworldnft">
+          <Link href="https://twitter.com/mooworldsol">
             <a className="relative sm:relative md:relative xl:hidden lg:hidden">
               <img src="./img/followUsButton.png" />
             </a>
