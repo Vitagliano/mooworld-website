@@ -32,9 +32,9 @@ export default function Footer() {
                   <div className="lg:col-span-2 flex justify-center items-center ">
                     <div className="w-full -mt-2 -ml-3 lg:ml-0">
                       <div className="max-w-md mt-4 text-white">
-                        888 Cows discovering the universe of #solana But now
-                        they must exploit the biodiversity of these planets to
-                        survive! Staking, Breeding and Tamagotchi System.
+                        888 Cows discovering the universe of AVAX. Now they
+                        must exploit the biodiversity of these planets to
+                        survive and buid a community!
                       </div>
                     </div>
                   </div>
@@ -43,7 +43,7 @@ export default function Footer() {
                     <div className="text-white">Follow us</div>
                     <div className="flex mt-5 space-x-5 text-gray-400 hover:">
                       <a
-                        href="https://twitter.com/mooworldsol"
+                        href="https://twitter.com/mooworldavax"
                         target="_blank"
                         rel="noopener"
                       >

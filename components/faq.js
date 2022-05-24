@@ -82,7 +82,7 @@ export default function Faq() {
 const faqdata = [
   {
     question: "What is the collection size and price of Moo World?",
-    answer: "The Moo collection consists of 888 NFTs and the price range is 0.5 - 1 SOL.",
+    answer: "The Moo collection consists of 888 NFTs and the price is TBA.",
   },
   {
     question: "When is the launch date?",
