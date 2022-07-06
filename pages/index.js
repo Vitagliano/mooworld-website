@@ -14,35 +14,35 @@ export default function Home() {
         <title>Moo World</title>
         <meta
           name="description"
-          content="888 Cows discovering the universe of Solana.
-          But now they must exploit the biodiversity of these planets to survive!
-          Staking, Breeding and Tamagotchi System."
+          content="888 Cows discovering the universe of Avalanche.
+          But now they must exploit the biodiversity of these planets to survive!"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <Hero />
 
-      <div className="overflow-y-hidden relative z-50" id="chapter-one">
+      <div className="overflow-y-hidden relative z-50" id="lore">
         <div className="mx-auto container py-6 px-4">
           <div className="w-full flex justify-center">
             <div className="w-full backdrop-blur-lg border-[1px] border-white/10  rounded-xl md:w-11/12 xl:w-10/12 bg-gradient-to-r from-indigo-300/10 to-blue/10 md:py-8 md:px-8 px-5 py-4 xl:px-12 xl:py-16 xl:pb-8">
               <div className="grid overflow-hidden grid-cols-1 grid-rows-2 gap-5 grid-flow-row sm:grid-cols-1 sm:grid-rows-2 lg:grid-cols-2 lg:grid-rows-1 ">
                 <SectionTitle
-                  pretitle="CHAPTER ONE"
-                  title="The first Moo"
+                  pretitle="Lore"
+                  title="The world of Moos"
                   align="left"
                 >
-                  A few light years from Earth, an ideal planet has very
-                  different friends. The Moo, born on their home planet
-                  MooWorld, form a bovine and complete society, focused on
-                  evolving and conquering the galaxy. <br /> <br />
-                  With perfect breeding conditions for cows of all types,
-                  MooWorld is also a universe of possibilities. If you thought
-                  there was only one Milky Way, embark on this story and
-                  discover more about MooWorld.
-                  <br /> <br />
-                  <p className="text-md">More Moo History soon...</p>
+                  In the year 2025, the Moo inhabit a post-apocalyptic world
+                  where most life forms, including humanity, have been wiped
+                  out. Originally modified by humans for increased milk
+                  production and better reproduction, Moos are practically the
+                  last survivors and inheritors of humanity's instinct. <br />{" "}
+                  <br />
+                  On a planet littered with remnants of a past life, the Moos
+                  survive by exploring and seeking to evolve as a society. While
+                  their incentives are not always aligned, Moo from all corners
+                  of the world face extremely difficult odds and recognize that
+                  their best chance of survival often lies in cooperation.
                 </SectionTitle>
                 <div className="flex flex-shrink-0 justify-center">
                   <img

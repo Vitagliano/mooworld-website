@@ -11,11 +11,11 @@ export default function Navbar() {
               <img src="./img/followUsButton.png" />
             </a>
           </Link>
-          {/* <Link href="https://discord.gg/mooworld">
+          <Link href="https://discord.gg/km9nRVxjAZ">
             <a className="hover:scale-125 transition-all">
               <img src="./img/discordButton.png" />
             </a>
-          </Link> */}
+          </Link>
         </div>
 
         <Link href="/">
@@ -30,17 +30,17 @@ export default function Navbar() {
               <img src="./img/followUsButton.png" />
             </a>
           </Link>
-          <Link href="#chapter-one">
+          <Link href="#lore">
             <a className="">
               <img src="./img/aboutUsButton.png" />
             </a>
           </Link>
 
-          {/* <Link href="https://discord.gg/mooworld">
+          <Link href="https://discord.gg/km9nRVxjAZ">
             <a className="relative sm:relative md:relative xl:hidden lg:hidden">
               <img src="./img/discordButton.png" />
             </a>
-          </Link> */}
+          </Link>
         </div>
       </nav>
     </Container>

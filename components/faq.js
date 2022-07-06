@@ -85,9 +85,9 @@ const faqdata = [
     answer: "The Moo collection consists of 888 NFTs and the price is TBA.",
   },
   {
-    question: "When is the launch date?",
+    question: "When and where is the launch date?",
     answer:
-      "The Moo Mint date will be announced on Discord",
+      "The Moo Mint date will be announced on Twitter and Discord and the launch will be on Campfire",
   },
   {
     question: "What is the utility behind holding Moos?",
