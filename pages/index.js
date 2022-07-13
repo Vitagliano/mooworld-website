@@ -14,7 +14,7 @@ export default function Home() {
         <title>Moo World</title>
         <meta
           name="description"
-          content="888 Cows discovering the universe of Avalanche.
+          content="2000 Cows discovering the universe of Avalanche.
           But now they must exploit the biodiversity of these planets to survive!"
         />
         <link rel="icon" href="/favicon.ico" />
