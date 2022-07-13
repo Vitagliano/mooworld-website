@@ -30,7 +30,7 @@ export default function MintInfo() {
                         </div>
 
                         <h2 className="max-w-2xl mt-3 text-3xl font-bold leading-snug tracking-tight lg:leading-tight lg:text-4xl text-white">
-                          888
+                          2000
                         </h2>
                       </div>
                     </div>
@@ -42,7 +42,7 @@ export default function MintInfo() {
                         </div>
 
                         <h2 className="max-w-2xl mt-3 text-3xl font-bold leading-snug tracking-tight lg:leading-tight lg:text-4xl text-white">
-                          2 SOL
+                          1 AVAX
                         </h2>
                       </div>
                     </div>

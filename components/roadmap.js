@@ -25,15 +25,28 @@ export default function Roadmap() {
                     <p className="text-xl font-regular  text-white">
                       Phase 1 - 🐮 The first Moo
                     </p>
-                    <span className="inline-flex items-center text-xs font-normal text-gray-400">
-                      This phase will be revealed soon
+                    <span className="inline-flex items-center text font-normal text-gray-400">
+                      01. Dissemination of Moo through the 🔺 $AVAX network
+                      <br />
+                      02. Discord server launch
+                      <br />
+                      03. Be Moolish!
+                      <br />
+                      04. Partnerships with projects
+                      <br />
+                      05. Events with Moo community
+                      <br />
+                      06. NFT Mint on Joepegs launchpad
+                      <br />
+                      07. See your Moo on the Moo World website
+                      <br />
                     </span>
                   </div>
                   <div className="relative z-50 px-6 py-6 sm:px-6 sm:py-6 lg:px-12 lg:py-12  mb-4  bg-gradient-to-r from-indigo-300/10 to-blue/10 backdrop-blur-lg border-[1px] border-white/10  rounded-xl">
                     <p className="text-xl font-regular  text-white">
                       Phase 2 - 🌍 Opening of the world
                     </p>
-                    <span className="inline-flex items-center text-xs font-normal text-gray-400">
+                    <span className="inline-flex items-center text font-normal text-gray-400">
                       This phase will be revealed when the project gets to that
                     </span>
                   </div>
@@ -41,7 +54,7 @@ export default function Roadmap() {
                     <p className="text-xl font-regular  text-white">
                       Phase 3 - 💰 Putting the Moo to Work
                     </p>
-                    <span className="inline-flex items-center text-xs font-normal text-gray-400">
+                    <span className="inline-flex items-center text font-normal text-gray-400">
                       This phase will be revealed when the project gets to that
                     </span>
                   </div>
@@ -49,7 +62,7 @@ export default function Roadmap() {
                     <p className="text-xl font-regular  text-white">
                       Phase 4 - 🪐 New worlds for the Moo
                     </p>
-                    <span className="inline-flex items-center text-xs font-normal text-gray-400">
+                    <span className="inline-flex items-center text font-normal text-gray-400">
                       This phase will be revealed when the project gets to that
                     </span>
                   </div>
@@ -58,7 +71,7 @@ export default function Roadmap() {
                       Phase 5 - 👨‍👩‍👧‍👦 Exploration, population growth and new
                       generations
                     </p>
-                    <span className="inline-flex items-center text-xs font-normal text-gray-400">
+                    <span className="inline-flex items-center text font-normal text-gray-400">
                       This phase will be revealed when the project gets to that
                     </span>
                   </div>
