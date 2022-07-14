@@ -30,7 +30,7 @@ export default function MintInfo() {
                         </div>
 
                         <h2 className="max-w-2xl mt-3 text-3xl font-bold leading-snug tracking-tight lg:leading-tight lg:text-4xl text-white">
-                          888
+                          2000
                         </h2>
                       </div>
                     </div>
@@ -42,7 +42,7 @@ export default function MintInfo() {
                         </div>
 
                         <h2 className="max-w-2xl mt-3 text-3xl font-bold leading-snug tracking-tight lg:leading-tight lg:text-4xl text-white">
-                          2 SOL
+                          1 AVAX
                         </h2>
                       </div>
                     </div>
@@ -54,18 +54,20 @@ export default function MintInfo() {
                         </div>
 
                         <h2 className="max-w-2xl mt-3 text-3xl font-bold leading-snug tracking-tight lg:leading-tight lg:text-4xl text-white">
-                          04/14
+                          07/20
                         </h2>
                       </div>
                     </div>
                     <div class="backdrop-blur-lg rounded-xl border-[1px] border-white/10 bg-blue/75 flex flex-row justify-center items-center">
+                      <img src="./img/joepegs.png" className="w-16 h-16 mr-6" />
+
                       <div className={`flex flex-col`}>
                         <div className="text-sm font-bold tracking-wider text-white uppercase">
                           Launchpad
                         </div>
 
                         <h2 className="max-w-2xl mt-3 text-3xl font-bold leading-snug tracking-tight lg:leading-tight lg:text-4xl text-white">
-                          Monkelabs
+                          Joepegs
                         </h2>
                       </div>
                     </div>

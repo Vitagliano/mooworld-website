@@ -21,6 +21,8 @@ export default function Home() {
       </Head>
 
       <Hero />
+      
+      <MintInfo />
 
       <div className="overflow-y-hidden relative z-50" id="lore">
         <div className="mx-auto container py-6 px-4">
@@ -62,12 +64,6 @@ export default function Home() {
       <Faq />
 
       <Footer />
-
-      {/* 
-     
- 
-      
-      */}
     </>
   );
 }
