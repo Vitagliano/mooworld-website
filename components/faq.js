@@ -82,12 +82,12 @@ export default function Faq() {
 const faqdata = [
   {
     question: "What is the collection size and price of Moo World?",
-    answer: "The Moo collection consists of 2000 NFTs and the price TBA",
+    answer: "The Moo collection consists of 2000 NFTs and the price 1 AVAX",
   },
   {
     question: "When and where is the launch date?",
     answer:
-      "The Moo Mint date will be announced on Twitter and Discord and the launch will be on Joepegs",
+      "July 20 on Joepegs",
   },
   {
     question: "What is the utility behind holding Moos?",
