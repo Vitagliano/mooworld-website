@@ -27,14 +27,19 @@
     "@headlessui/react": "^1.2.0",
     "@heroicons/react": "^1.0.1",
     "@tailwindcss/aspect-ratio": "^0.2.1",
+    "@web3-react/core": "^6.1.9",
+    "@web3-react/injected-connector": "^6.0.7",
+    "ethers": "^5.6.9",
     "next": "^11.1.0",
     "next-themes": "^0.0.14",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-hook-form": "^7.8.3",
+    "react-toastify": "^9.0.5",
     "react-tsparticles": "^1.42.4",
     "tsparticles": "^1.42.4",
-    "tsparticles-preset-stars": "^1.42.4"
+    "tsparticles-preset-stars": "^1.42.4",
+    "web3": "^1.7.4"
   },
   "devDependencies": {
     "@emotion/babel-plugin": "^11.3.0",
