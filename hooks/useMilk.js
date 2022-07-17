@@ -21,10 +21,8 @@ const useMilk = (web3, account) => {
   const getMilkBalance = async () => {
     if (account) {
       const owner = account;
-      console.log({ account });
       const balance = await contract.balanceOf(owner);
-      console.log({ balance });
-      return parseInt(balance, 10);
+      return balance;
     }
   };
 

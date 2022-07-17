@@ -1,34 +1,83 @@
 import React, { useState, useEffect } from "react";
 import Container from "../components/container";
 import Navbar from "../components/navbar";
+import { ethers } from "ethers";
 
 import Particles from "react-tsparticles";
 import useWeb3 from "../hooks/useWeb3";
 import useMilk from "../hooks/useMilk";
 import useMooWorld from "../hooks/useMooWorld";
 import useStake from "../hooks/useStake";
+import { toast } from "react-toastify";
 
 const StakePage = () => {
   const [milk, setMilk] = useState(0);
   const [mooNft, setMooNft] = useState([]);
+  const [isApproved, setIsApproved] = useState(false);
+  const [stakedTokens, setStakedTokens] = useState([]);
   const { activate, deactivate, active, account, web3 } = useWeb3();
 
   const { getMilkBalance } = useMilk(web3, account);
-  const { getUserMoos } = useMooWorld(web3, account);
-  const { stakeNft } = useStake(web3, account);
+  const { getUserMoosTokens, getIsApproved, setApproveForAll, getMooMetadata } =
+    useMooWorld(web3, account);
+  const { stakeNft, tokensOfOwner } = useStake(web3, account);
 
   useEffect(async () => {
     if (active) {
       const milk = await getMilkBalance();
       setMilk(milk);
-      const nfts = await getUserMoos();
-      setMooNft(nfts);
+      // const nfts = await getUserMoosTokens();
+      // setMooNft(nfts);
+      const isApprovedOnContract = await getIsApproved();
+      setIsApproved(isApprovedOnContract);
+      const tokensStaked = await tokensOfOwner();
+      setStakedTokens(tokensStaked);
+      if (mooNft.length === 0) {
+        const getMooPromise = new Promise((resolve, reject) => {
+          getUserMoosTokens()
+            .then((moos) => {
+              if (moos) {
+                Promise.all(
+                  moos.map((moo) =>
+                    getMooMetadata(ethers.utils.formatUnits(moo, 0))
+                  )
+                )
+                  .then((metadatas) => {
+                    setMooNft(metadatas);
+                    resolve();
+                  })
+                  .catch((error) => {
+                    console.log(error);
+                    reject();
+                  });
+              } else {
+                reject();
+              }
+            })
+            .catch((err) => {
+              console.log(err);
+            });
+        });
+
+        toast.promise(getMooPromise, {
+          pending: "Loading Moos...",
+          success: "Loaded Moos",
+          error: "Error loading Moos ... Try again!",
+        });
+      }
     }
   }, [active]);
 
   const handleStake = async (tokenId) => {
-    await stakeNft(tokenId);
+    await stakeNft(Number(tokenId));
   };
+
+  const handleApprove = async () => {
+    await setApproveForAll();
+    setApproveForAll(true);
+  };
+
+  console.log({ stakedTokens });
 
   const disconectedContent = () => {
     return (
@@ -53,47 +102,66 @@ const StakePage = () => {
       <div className="grid overflow-hidden grid-cols-2 grid-rows-2 gap-2">
         <div className="grid justify-center align-center text-white box row-start-1 row-end-2 backdrop-blur-lg border-[1px] border-white/10 rounded-xl bg-gradient-to-r from-indigo-300/10 to-blue/10 md:py-8 md:px-8 px-5 py-4 xl:px-12 xl:py-16 xl:pb-8">
           <h4 className="text-[20px] text-center">Account balance</h4>
-          <span className="text-[28px] text-center w-full block">{`${milk} $MILK`}</span>
+          <span className="text-[28px] text-center w-full block">{`${ethers.utils.formatUnits(
+            milk,
+            18
+          )} $MILK`}</span>
         </div>
         <div className="text-white box row-start-1 row-end-3 backdrop-blur-lg border-[1px] border-white/10 rounded-xl bg-gradient-to-r from-indigo-300/10 to-blue/10 md:py-8 md:px-8 px-5 py-4 xl:px-12 xl:py-16 xl:pb-8">
-          {mooNft.length === 0 && (
+          {isApproved && mooNft.length === 0 && (
             <h4 className="text-[28px] font-semibold  text-center mb-5">
               You don't have Moos yet :(
             </h4>
           )}
 
-          {mooNft.length > 0 && (
+          {isApproved && mooNft.length > 0 && (
             <>
               <h4 className="text-[28px] font-semibold  text-center mb-5">
-                MOOOO
+                Your moos
               </h4>
-              {mooNft.map((moo, index) => {
-                return (
-                  <div key={index}>
-                    <span className="text-[20px] text-center">{moo}</span>
-                    <button
-                      onClick={() => handleStake(moo)}
-                    >{`stake ${moo}`}</button>
-                  </div>
-                );
-              })}
+              <div className="grid grid-cols-4 gap-4">
+                {mooNft.map((moo) => {
+                  if (!moo) return null;
+                  return (
+                    <div className="grid align-middle justify-center">
+                      <img
+                        src={moo.image.replace(
+                          "ipfs://",
+                          "https://cloudflare-ipfs.com/ipfs/"
+                        )}
+                        alt={moo.name}
+                        className="w-20 h-20 rounded-xl mb-6 justify-self-center"
+                      />
+                      <span className="w-full font-bold py-2">{moo.name}</span>
+                      <button onClick={() => handleStake(moo.id)}>Stake</button>
+                    </div>
+                  );
+                })}
+              </div>
             </>
           )}
 
-          {/* <span className="text-[22px] font-light">
-            Step 1: Approve the contract to enable staking.
-          </span>
-          <br />
-          <span className="text-[22px] font-light">
-            Step 2: Once complete, stake your tokens.
-          </span>
-          <div className="grid justify-center align-center">
-            <button>Approve</button>
-          </div> */}
+          {!isApproved && (
+            <>
+              <h4 className="text-[28px] font-semibold  text-center mb-5">
+                Staking liquidity rewards
+              </h4>
+              <span className="text-[22px] font-light">
+                Step 1: Approve the contract to enable staking.
+              </span>
+              <br />
+              <span className="text-[22px] font-light">
+                Step 2: Once complete, stake your tokens.
+              </span>
+              <div className="grid justify-center align-center">
+                <button onClick={handleApprove}>Approve</button>
+              </div>
+            </>
+          )}
         </div>
         <div className="text-white box col-start-1 backdrop-blur-lg border-[1px] border-white/10 rounded-xl bg-gradient-to-r from-indigo-300/10 to-blue/10 md:py-8 md:px-8 px-5 py-4 xl:px-12 xl:py-16 xl:pb-8">
           <span className="text-[22px] font-light text-center w-full block">
-            0 moo staked
+            {`${stakedTokens?.length} moo staked`}
           </span>
           <span className="text-[28px] text-center w-full block font-semibold">
             {`0 $MILK`}
