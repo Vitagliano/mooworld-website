@@ -13,6 +13,8 @@ import { toast } from "react-toastify";
 const StakePage = () => {
   const [milk, setMilk] = useState(0);
   const [mooNft, setMooNft] = useState([]);
+  const [mooIds, setMooIds] = useState([]);
+  const [rewards, setRewards] = useState(0);
   const [isApproved, setIsApproved] = useState(false);
   const [stakedTokens, setStakedTokens] = useState([]);
   const { activate, deactivate, active, account, web3 } = useWeb3();
@@ -20,49 +22,60 @@ const StakePage = () => {
   const { getMilkBalance } = useMilk(web3, account);
   const { getUserMoosTokens, getIsApproved, setApproveForAll, getMooMetadata } =
     useMooWorld(web3, account);
-  const { stakeNft, tokensOfOwner } = useStake(web3, account);
+  const {
+    stakeNft,
+    tokensOfOwner,
+    unstakeNft,
+    stakeAll,
+    unstakeAll,
+    claimMilkAndUnstake,
+    claimMilk,
+    getStakeBalance,
+  } = useStake(web3, account);
 
   useEffect(async () => {
     if (active) {
       const milk = await getMilkBalance();
       setMilk(milk);
-      // const nfts = await getUserMoosTokens();
-      // setMooNft(nfts);
       const isApprovedOnContract = await getIsApproved();
       setIsApproved(isApprovedOnContract);
-      const tokensStaked = await tokensOfOwner();
-      setStakedTokens(tokensStaked);
+      const rewardsResult = await getStakeBalance();
+      setRewards(rewardsResult);
       if (mooNft.length === 0) {
         const getMooPromise = new Promise((resolve, reject) => {
-          getUserMoosTokens()
-            .then((moos) => {
-              if (moos) {
-                Promise.all(
-                  moos.map((moo) =>
-                    getMooMetadata(ethers.utils.formatUnits(moo, 0))
+          getUserMoosTokens().then((moos) => {
+            setMooIds(moos);
+            tokensOfOwner()
+              .then((tokens) => {
+                setStakedTokens(tokens);
+                moos.push(...tokens);
+                if (moos) {
+                  Promise.all(
+                    moos.map((moo) =>
+                      getMooMetadata(ethers.utils.formatUnits(moo, 0))
+                    )
                   )
-                )
-                  .then((metadatas) => {
-                    setMooNft(metadatas);
-                    resolve();
-                  })
-                  .catch((error) => {
-                    console.log(error);
-                    reject();
-                  });
-              } else {
-                reject();
-              }
-            })
-            .catch((err) => {
-              console.log(err);
+                    .then((metadatas) => {
+                      setMooNft(metadatas);
+                      resolve();
+                    })
+                    .catch((error) => {
+                      console.log(error);
+                      reject();
+                    });
+                } else {
+                  reject();
+                }
+              })
+              .catch((err) => {
+                console.log(err);
+              });
+            toast.promise(getMooPromise, {
+              pending: "Loading Moos...",
+              success: "Loaded Moos",
+              error: "Error loading Moos ... Try again!",
             });
-        });
-
-        toast.promise(getMooPromise, {
-          pending: "Loading Moos...",
-          success: "Loaded Moos",
-          error: "Error loading Moos ... Try again!",
+          });
         });
       }
     }
@@ -72,12 +85,26 @@ const StakePage = () => {
     await stakeNft(Number(tokenId));
   };
 
+  const handleUnstake = async (tokenId) => {
+    await unstakeNft(Number(tokenId));
+  };
+
+  const handleStakeAll = async () => {
+    await stakeAll(mooIds);
+  };
+
+  const handleUnstakeAll = async () => {
+    await unstakeAll(stakedTokens);
+  };
+
+  const handleClaim = async () => {
+    await claimMilk();
+  };
+
   const handleApprove = async () => {
     await setApproveForAll();
     setApproveForAll(true);
   };
-
-  console.log({ stakedTokens });
 
   const disconectedContent = () => {
     return (
@@ -116,14 +143,30 @@ const StakePage = () => {
 
           {isApproved && mooNft.length > 0 && (
             <>
-              <h4 className="text-[28px] font-semibold  text-center mb-5">
-                Your moos
-              </h4>
+              <div className="flex justify-between">
+                <h4 className="text-[28px] font-semibold  text-center mb-5">
+                  Your moos
+                </h4>
+                <div>
+                  <button className="mr-5" onClick={handleStakeAll}>
+                    Stake All
+                  </button>
+                  <button
+                    disabled={stakedTokens.length === 0}
+                    onClick={handleUnstakeAll}
+                  >
+                    Unstake All
+                  </button>
+                </div>
+              </div>
               <div className="grid grid-cols-4 gap-4">
                 {mooNft.map((moo) => {
                   if (!moo) return null;
                   return (
-                    <div className="grid align-middle justify-center">
+                    <div
+                      key={moo.id}
+                      className="grid align-middle justify-center"
+                    >
                       <img
                         src={moo.image.replace(
                           "ipfs://",
@@ -133,7 +176,15 @@ const StakePage = () => {
                         className="w-20 h-20 rounded-xl mb-6 justify-self-center"
                       />
                       <span className="w-full font-bold py-2">{moo.name}</span>
-                      <button onClick={() => handleStake(moo.id)}>Stake</button>
+                      {stakedTokens.includes(moo.edition) ? (
+                        <button onClick={() => handleUnstake(moo.id)}>
+                          Unstake
+                        </button>
+                      ) : (
+                        <button onClick={() => handleStake(moo.id)}>
+                          Stake
+                        </button>
+                      )}
                     </div>
                   );
                 })}
@@ -164,10 +215,12 @@ const StakePage = () => {
             {`${stakedTokens?.length} moo staked`}
           </span>
           <span className="text-[28px] text-center w-full block font-semibold">
-            {`0 $MILK`}
+            {`${rewards} $MILK`}
           </span>
           <div className="grid justify-center align-center">
-            <button>Claim</button>
+            <button disabled={Number(rewards) == 0} onClick={handleClaim}>
+              Claim
+            </button>
           </div>
           <span className="text-[28px] text-center w-full block font-normal">
             Earning 6 $MILK / DAY
