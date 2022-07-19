@@ -1,11 +1,31 @@
 import { ethers } from "ethers";
 import { useEffect, useState } from "react";
 import stakeAbi from "../abi/mooStaking.json";
+import { isConfirmedOnBlockchain } from "../utils/transactionConfirmed";
 
 const contractAddress = process.env.NEXT_PUBLIC_CONTRACT_STAKE_ADDRESS;
 
 const useStake = (web3, account) => {
   const [contract, setContract] = useState(null);
+  const [transaction, setTransaction] = useState(null);
+  const [isConfirmated, setIsConfirmated] = useState(false);
+
+  useEffect(() => {
+    if (transaction) {
+      setTimeout(() => {
+        const observeBlockchainInterval = setInterval(async () => {
+          if (transaction && !transaction.confirmed) {
+            const isConfirmed = await isConfirmedOnBlockchain(transaction.hash);
+            if (isConfirmed) {
+              setIsConfirmated(false);
+              setIsConfirmated(true);
+              clearInterval(observeBlockchainInterval);
+            }
+          }
+        }, 1000);
+      }, 11000);
+    }
+  }, [transaction]);
 
   useEffect(() => {
     if (web3) {
@@ -20,25 +40,33 @@ const useStake = (web3, account) => {
 
   const stakeNft = async (tokenId) => {
     if (account && tokenId) {
-      await contract.stake(tokenId);
+      await contract.stake(tokenId).then((tx) => {
+        setTransaction(tx);
+      });
     }
   };
 
   const unstakeNft = async (tokenId) => {
     if (account && tokenId) {
-      await contract.unstake(tokenId);
+      await contract.unstake(tokenId).then((tx) => {
+        setTransaction(tx);
+      });
     }
   };
 
   const stakeAll = async (tokenIds) => {
     if (account && tokenIds) {
-      await contract.stakeMany(tokenIds);
+      await contract.stakeMany(tokenIds).then((tx) => {
+        setTransaction(tx);
+      });
     }
   };
 
   const unstakeAll = async (tokenIds) => {
     if (account && tokenIds) {
-      await contract.unstakeMany(tokenIds);
+      await contract.unstakeMany(tokenIds).then((tx) => {
+        setTransaction(tx);
+      });
     }
   };
 
@@ -85,6 +113,7 @@ const useStake = (web3, account) => {
     claimMilk,
     claimMilkAndUnstake,
     getStakeBalance,
+    isConfirmated,
   };
 };
 

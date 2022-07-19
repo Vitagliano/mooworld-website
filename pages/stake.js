@@ -31,6 +31,7 @@ const StakePage = () => {
     claimMilkAndUnstake,
     claimMilk,
     getStakeBalance,
+    isConfirmated,
   } = useStake(web3, account);
 
   useEffect(() => {
@@ -38,52 +39,55 @@ const StakePage = () => {
   }, []);
 
   useEffect(async () => {
-    if (active) {
+    if (active || isConfirmated) {
       const milk = await getMilkBalance();
       setMilk(milk);
       const isApprovedOnContract = await getIsApproved();
       setIsApproved(isApprovedOnContract);
       const rewardsResult = await getStakeBalance();
       setRewards(rewardsResult);
-      if (mooNft.length === 0) {
-        const getMooPromise = new Promise((resolve, reject) => {
-          getUserMoosTokens().then((moos) => {
-            setMooIds(moos);
-            tokensOfOwner()
-              .then((tokens) => {
-                setStakedTokens(tokens);
-                moos.push(...tokens);
-                if (moos) {
-                  Promise.all(
-                    moos.map((moo) =>
-                      getMooMetadata(ethers.utils.formatUnits(moo, 0))
-                    )
+
+      const getMooPromise = new Promise((resolve, reject) => {
+        getUserMoosTokens().then((moos) => {
+          setMooIds(moos);
+          tokensOfOwner()
+            .then((tokens) => {
+              setStakedTokens(tokens);
+              moos.push(...tokens);
+              if (moos) {
+                Promise.all(
+                  moos.map((moo) =>
+                    getMooMetadata(ethers.utils.formatUnits(moo, 0))
                   )
-                    .then((metadatas) => {
-                      setMooNft(metadatas);
-                      resolve();
-                    })
-                    .catch((error) => {
-                      console.log(error);
-                      reject();
-                    });
-                } else {
-                  reject();
-                }
-              })
-              .catch((err) => {
-                console.log(err);
-              });
-            toast.promise(getMooPromise, {
-              pending: "Loading Moos...",
-              success: "Loaded Moos",
-              error: "Error loading Moos ... Try again!",
+                )
+                  .then((metadatas) => {
+                    setMooNft(metadatas);
+                    resolve();
+                  })
+                  .catch((error) => {
+                    console.log(error);
+                    reject();
+                  });
+              } else {
+                reject();
+              }
+            })
+            .catch((err) => {
+              console.log(err);
             });
+          toast.promise(getMooPromise, {
+            pending: "Loading Moos...",
+            success: "Loaded Moos",
+            error: "Error loading Moos ... Try again!",
           });
         });
+      });
+
+      if (isConfirmated) {
+        toast.success("You have confirmed!");
       }
     }
-  }, [active]);
+  }, [active, isConfirmated]);
 
   const handleStake = async (tokenId) => {
     await stakeNft(Number(tokenId));
