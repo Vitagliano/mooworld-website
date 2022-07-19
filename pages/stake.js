@@ -33,6 +33,10 @@ const StakePage = () => {
     getStakeBalance,
   } = useStake(web3, account);
 
+  useEffect(() => {
+    activate();
+  }, []);
+
   useEffect(async () => {
     if (active) {
       const milk = await getMilkBalance();
@@ -101,6 +105,10 @@ const StakePage = () => {
     await claimMilk();
   };
 
+  const handleClaimAndUnstake = async () => {
+    await claimMilkAndUnstake();
+  };
+
   const handleApprove = async () => {
     await setApproveForAll();
     setApproveForAll(true);
@@ -148,10 +156,14 @@ const StakePage = () => {
                   Your moos
                 </h4>
                 <div>
-                  <button className="mr-5" onClick={handleStakeAll}>
+                  <button
+                    className="border-[1px] border-white rounded-[4px] bg-[#9490BB] mr-5 p-[4px] hover:bg-[#4e4e52]"
+                    onClick={handleStakeAll}
+                  >
                     Stake All
                   </button>
                   <button
+                    className="border-[1px] border-white rounded-[4px] bg-[#9490BB] p-[4px] hover:bg-[#4e4e52] hover:bg-[#4e4e52]"
                     disabled={stakedTokens.length === 0}
                     onClick={handleUnstakeAll}
                   >
@@ -165,7 +177,7 @@ const StakePage = () => {
                   return (
                     <div
                       key={moo.id}
-                      className="grid align-middle justify-center"
+                      className="border-[1px] border-white p-[1rem] rounded-[8px] grid align-middle justify-center"
                     >
                       <img
                         src={moo.image.replace(
@@ -177,11 +189,17 @@ const StakePage = () => {
                       />
                       <span className="w-full font-bold py-2">{moo.name}</span>
                       {stakedTokens.includes(moo.edition) ? (
-                        <button onClick={() => handleUnstake(moo.id)}>
+                        <button
+                          className="border-[1px] border-white rounded-[4px] bg-[#9490BB] hover:bg-[#4e4e52]"
+                          onClick={() => handleUnstake(moo.id)}
+                        >
                           Unstake
                         </button>
                       ) : (
-                        <button onClick={() => handleStake(moo.id)}>
+                        <button
+                          className="border-[1px] border-white rounded-[4px] bg-[#9490BB] hover:bg-[#4e4e52]"
+                          onClick={() => handleStake(moo.id)}
+                        >
                           Stake
                         </button>
                       )}
@@ -218,11 +236,22 @@ const StakePage = () => {
             {`${rewards} $MILK`}
           </span>
           <div className="grid justify-center align-center">
-            <button disabled={Number(rewards) == 0} onClick={handleClaim}>
+            <button
+              className="border-[1px] border-white rounded-[4px] bg-[#9490BB] p-[4px] hover:bg-[#4e4e52] hover:bg-[#4e4e52] mb-2 disabled:opacity-75"
+              disabled={Number(rewards) == 0}
+              onClick={handleClaim}
+            >
               Claim
             </button>
+            <button
+              className="border-[1px] border-white rounded-[4px] bg-[#9490BB] p-[4px] hover:bg-[#4e4e52] hover:bg-[#4e4e52] disabled:opacity-75"
+              disabled={Number(rewards) == 0}
+              onClick={handleClaimAndUnstake}
+            >
+              Claim and unstake
+            </button>
           </div>
-          <span className="text-[28px] text-center w-full block font-normal">
+          <span className="text-[28px] text-center w-full block font-normal disabled:opacity-75">
             Earning 6 $MILK / DAY
           </span>
         </div>
