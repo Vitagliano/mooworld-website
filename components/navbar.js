@@ -11,7 +11,7 @@ export default function Navbar() {
               <img src="./img/followUsButton.png" />
             </a>
           </Link>
-          <Link href="https://discord.gg/6h6za5sDMg">
+          <Link href="https://discord.gg/mooworld">
             <a className="hover:scale-125 transition-all">
               <img src="./img/discordButton.png" />
             </a>
@@ -36,7 +36,7 @@ export default function Navbar() {
             </a>
           </Link>
 
-          <Link href="https://discord.gg/6h6za5sDMg">
+          <Link href="https://discord.gg/mooworld">
             <a className="relative sm:relative md:relative xl:hidden lg:hidden">
               <img src="./img/discordButton.png" />
             </a>
