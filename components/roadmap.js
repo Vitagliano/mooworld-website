@@ -47,7 +47,23 @@ export default function Roadmap() {
                       Phase 2 - 🌍 Opening of the world
                     </p>
                     <span className="inline-flex items-center text font-normal text-gray-400">
-                      This phase will be revealed when the project gets to that
+                      01. Explore Earth with the Moos
+                    </span>
+                    <br />
+                    <span className="inline-flex items-center text font-normal text-gray-400">
+                      02. First $MILK airdrop
+                    </span>
+                    <br />
+                    <span className="inline-flex items-center text font-normal text-gray-400">
+                      03. Exclusive channels for Moos on our Discord
+                    </span>
+                    <br />
+                    <span className="inline-flex items-center text font-normal text-gray-400">
+                      04. Moos evolve and discover benefits of $MILK
+                    </span>
+                    <br />
+                    <span className="inline-flex items-center text font-normal text-gray-400">
+                      05. Moo merchs, take your Moo to real life!
                     </span>
                   </div>
                   <div className="relative z-50 px-6 py-6 sm:px-6 sm:py-6 lg:px-12 lg:py-12  mb-4  bg-gradient-to-r from-indigo-300/10 to-blue/10 backdrop-blur-lg border-[1px] border-white/10  rounded-xl">
@@ -55,7 +71,11 @@ export default function Roadmap() {
                       Phase 3 - 💰 Putting the Moo to Work
                     </p>
                     <span className="inline-flex items-center text font-normal text-gray-400">
-                      This phase will be revealed when the project gets to that
+                      01. Moos start generating $MILK on staking
+                    </span>
+                    <br />
+                    <span className="inline-flex items-center text font-normal text-gray-400">
+                      02. More to be revealed...
                     </span>
                   </div>
                   <div className="relative z-50 px-6 py-6 sm:px-6 sm:py-6 lg:px-12 lg:py-12  mb-4  bg-gradient-to-r from-indigo-300/10 to-blue/10 backdrop-blur-lg border-[1px] border-white/10  rounded-xl">
