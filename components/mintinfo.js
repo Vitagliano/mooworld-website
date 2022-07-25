@@ -1,8 +1,6 @@
 import React from "react";
 import Container from "./container";
-import { Disclosure } from "@headlessui/react";
-import { ChevronUpIcon } from "@heroicons/react/solid";
-import SectionTitle from "./sectionTitle";
+import MintBox from "./MintBox";
 
 export default function MintInfo() {
   return (
@@ -11,15 +9,8 @@ export default function MintInfo() {
         <div className="mx-auto container py-6 px-4">
           <div className="w-full flex justify-center">
             <div className="w-full md:w-11/12 xl:w-10/12">
+              <MintBox />
               <div>
-                <div className="backdrop-blur-lg rounded-xl border-[1px] border-white/10 px-12 mt-4 bg-blue/75">
-                  <SectionTitle
-                    className="!p-0"
-                    pretitle="All important information is here"
-                    title="Mint Info"
-                    align="left"
-                  ></SectionTitle>
-                </div>
                 <Container>
                   <div className="grid overflow-hidden lg:grid-cols-4 lg:grid-rows-1 gap-4 lg:grid-flow-row">
                     <div className="backdrop-blur-lg rounded-xl border-[1px] border-white/10 bg-blue/75 flex flex-row justify-center items-center">
