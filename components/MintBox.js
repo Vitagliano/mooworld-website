@@ -142,7 +142,7 @@ const MintBox = () => {
               </div>
             </div>
             <div>
-              <span className="text-base font-medium text-white">Minted</span>
+              <span className="text-base font-medium text-white">Amount</span>
               <div className="flex justify-between gap-4 mt-[12px]">
                 <button
                   onClick={() => changeQuantity("subtract")}
