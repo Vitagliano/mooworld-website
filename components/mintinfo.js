@@ -1,6 +1,6 @@
 import React from "react";
 import Container from "./container";
-import MintBox from "./MintBox";
+// import MintBox from "./MintBox";
 
 export default function MintInfo() {
   return (
@@ -9,7 +9,7 @@ export default function MintInfo() {
         <div className="mx-auto container py-6 px-4">
           <div className="w-full flex justify-center">
             <div className="w-full md:w-11/12 xl:w-10/12">
-              <MintBox />
+              {/* <MintBox /> */}
               <div>
                 <Container>
                   <div className="grid overflow-hidden lg:grid-cols-4 lg:grid-rows-1 gap-4 lg:grid-flow-row">
