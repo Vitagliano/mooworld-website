@@ -16,7 +16,7 @@ export default function MintInfo() {
                   <img
                     src="./img/show.gif"
                     alt="Moo World"
-                    className="sm:mt-4 rounded-xl shadow-xl border-[1px] border-white/20 w-[500px] h-[500px] lg:h-full object-cover object-center"
+                    className="rounded-xl shadow-xl border-[1px] border-white/20 w-[500px] h-[500px] lg:h-full object-cover object-center"
                   />
                 </div>
               </div>
