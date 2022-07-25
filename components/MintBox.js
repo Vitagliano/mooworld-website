@@ -99,7 +99,7 @@ const MintBox = () => {
               Mint a Moo
             </h1>
 
-            <p className="text-4xl flex flex-row gap-2 items-center p-0 m-0">
+            <p className="text-4xl flex flex-row gap-2 items-center p-0 m-0 mb-4">
               <svg width="24" height="24" viewBox="0 0 17 15" fill="white">
                 <path
                   d="M12.4833 8.73993C12.8744 8.0642 13.5057 8.0642 13.8968 8.73993L16.3331 13.0165C16.7242 13.6923 16.4042 14.2436 15.6218 14.2436H10.7139C9.94036 14.2436 9.62028 13.6923 10.0026 13.0165L12.4833 8.73993ZM7.77094 0.506787C8.16214 -0.168929 8.78452 -0.168929 9.17572 0.506787L9.71809 1.48481L10.9984 3.73426C11.3096 4.3744 11.3096 5.13015 10.9984 5.77031L6.70401 13.2121C6.31281 13.8167 5.66376 14.1991 4.94358 14.2436H1.37826C0.59584 14.2436 0.275751 13.7012 0.666969 13.0165L7.77094 0.506787Z"
@@ -172,14 +172,14 @@ const MintBox = () => {
             {active ? (
               <button
                 onClick={mint}
-                className="p-[16px] w-full backdrop-blur-lg rounded-xl border-[1px] border-white/10 px-10 bg-blue/15 text-white ease-in-out duration-300 hover:bg-blue hover:border-white"
+                className="p-[16px] w-full backdrop-blur-lg rounded-xl border-[1px] border-white/10 px-10 bg-burple text-white ease-in-out duration-300 hover:bg-burple/80 hover:border-white"
               >
                 MINT ({mintQuantity * mintPrice} AVAX)
               </button>
             ) : (
               <button
                 onClick={activate}
-                className="p-[16px] w-full backdrop-blur-lg rounded-xl border-[1px] border-white/10 px-10 bg-blue/15 text-white ease-in-out duration-300 hover:bg-blue hover:border-white"
+                className="p-[16px] w-full backdrop-blur-lg rounded-xl border-[1px] border-white/10 px-10 bg-burple text-white ease-in-out duration-300 hover:bg-burple/80 hover:border-white"
               >
                 Connect Wallet
               </button>
