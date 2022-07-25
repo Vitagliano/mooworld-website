@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import useWeb3 from "../hooks/useWeb3";
 
 const MintBox = () => {
   const [mintQuantity, setMintQuantity] = useState(1);
   const [mintPrice, setMintPrice] = useState(1);
+
+  const { activate, deactivate, active, account, web3 } = useWeb3();
 
   const changeQuantity = (operation) => {
     if (operation === "add" && mintQuantity < 4) {
