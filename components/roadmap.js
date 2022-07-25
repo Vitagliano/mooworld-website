@@ -47,23 +47,20 @@ export default function Roadmap() {
                       Phase 2 - 🌍 Opening of the world
                     </p>
                     <span className="inline-flex items-center text font-normal text-gray-400">
-                      01. Explore Earth with the Moos
+                      01. Explore Earth with the Moos <i>(Lore)</i>
                     </span>
                     <br />
                     <span className="inline-flex items-center text font-normal text-gray-400">
-                      02. First $MILK airdrop
+                      02. Exclusive channels for Moos on our Discord
                     </span>
                     <br />
                     <span className="inline-flex items-center text font-normal text-gray-400">
-                      03. Exclusive channels for Moos on our Discord
+                      03. First $MILK airdrop
                     </span>
                     <br />
                     <span className="inline-flex items-center text font-normal text-gray-400">
-                      04. Moos evolve and discover benefits of $MILK
-                    </span>
-                    <br />
-                    <span className="inline-flex items-center text font-normal text-gray-400">
-                      05. Moo merchs, take your Moo to real life!
+                      04. Moos evolve and discover benefits of $MILK{" "}
+                      <i>(Lore + Whitepaper presentation)</i>
                     </span>
                   </div>
                   <div className="relative z-50 px-6 py-6 sm:px-6 sm:py-6 lg:px-12 lg:py-12  mb-4  bg-gradient-to-r from-indigo-300/10 to-blue/10 backdrop-blur-lg border-[1px] border-white/10  rounded-xl">
@@ -75,24 +72,61 @@ export default function Roadmap() {
                     </span>
                     <br />
                     <span className="inline-flex items-center text font-normal text-gray-400">
-                      02. More to be revealed...
+                      02. Community Media Kit{" "}
+                      <i>
+                        (Create cover, wallpaper for pc and mobile with your Moo
+                        and other things from Moo World)
+                      </i>
                     </span>
-                  </div>
-                  <div className="relative z-50 px-6 py-6 sm:px-6 sm:py-6 lg:px-12 lg:py-12  mb-4  bg-gradient-to-r from-indigo-300/10 to-blue/10 backdrop-blur-lg border-[1px] border-white/10  rounded-xl">
-                    <p className="text-xl font-regular  text-white">
-                      Phase 4 - 🪐 New worlds for the Moo
-                    </p>
                     <span className="inline-flex items-center text font-normal text-gray-400">
-                      This phase will be revealed when the project gets to that
+                      03. Moo Shop
+                    </span>
+                    <br />
+                    <span className="inline-flex items-center text font-normal text-gray-400">
+                      04. Moo Lottery
                     </span>
                   </div>
                   <div className="relative z-50 px-6 py-6 sm:px-6 sm:py-6 lg:px-12 lg:py-12  mb-4  bg-gradient-to-r from-indigo-300/10 to-blue/10 backdrop-blur-lg border-[1px] border-white/10  rounded-xl">
                     <p className="text-xl font-regular  text-white">
-                      Phase 5 - 👨‍👩‍👧‍👦 Exploration, population growth and new
+                      Phase 4 - 👨‍👩‍👧‍👦 Exploration, population growth and new
                       generations
                     </p>
                     <span className="inline-flex items-center text font-normal text-gray-400">
-                      This phase will be revealed when the project gets to that
+                      01. Breed your Moo to get a Baby Moo
+                    </span>
+                    <br />
+                    <span className="inline-flex items-center text font-normal text-gray-400">
+                      02. The Milk Box is opened
+                    </span>
+                    <br />
+                    <span className="inline-flex items-center text font-normal text-gray-400">
+                      03. CowmMOOnity Collection
+                    </span>
+                  </div>
+                  <div className="relative z-50 px-6 py-6 sm:px-6 sm:py-6 lg:px-12 lg:py-12  mb-4  bg-gradient-to-r from-indigo-300/10 to-blue/10 backdrop-blur-lg border-[1px] border-white/10  rounded-xl">
+                    <p className="text-xl font-regular  text-white">
+                      Phase 5 - 🪐 New worlds for the Moo
+                    </p>
+                    <span className="inline-flex items-center text font-normal text-gray-400">
+                      01. Moo goes to space and find new Worlds
+                    </span>
+                    <br />
+                    <span className="inline-flex items-center text font-normal text-gray-400">
+                      02. Exploration through the universe <i>(Quests)</i>
+                    </span>
+                    <br />
+                    <span className="inline-flex items-center text font-normal text-gray-400">
+                      03. Baby Moos evolves to new types of Moo{" "}
+                      <i>(Moo Gen 2)</i>
+                    </span>
+                    <br />
+                    <span className="inline-flex items-center text font-normal text-gray-400">
+                      04. Moo merchs, take your Moo to real life!
+                    </span>
+
+                    <br />
+                    <span className="inline-flex items-center text font-normal text-gray-400">
+                      05. More to be added...
                     </span>
                   </div>
                 </Container>
