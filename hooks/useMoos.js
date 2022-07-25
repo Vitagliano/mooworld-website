@@ -65,12 +65,18 @@ const useMoos = (web3, account) => {
     return null;
   };
 
+  const getBalanceOf = async () => {
+    const response = await contract.balanceOf(account);
+    return response;
+  };
+
   return {
     mooContract: contract,
     getUserMoosTokens,
     getIsApproved,
     setApproveForAll,
     getMooMetadata,
+    getBalanceOf,
   };
 };
 
