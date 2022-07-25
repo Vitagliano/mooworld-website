@@ -84,7 +84,7 @@ const MooPage = () => {
             My Moos
           </h1>
           <ul className="grid grid-cols-1 sm:grid-cols-4 gap-4">
-            {userMoos.map((moo) => {
+            {userMoos.map((moo, index) => {
               if (!moo) return null;
               return (
                 <li
@@ -100,7 +100,7 @@ const MooPage = () => {
                       alt={moo.name}
                       className="w-60 h-60 rounded-xl mb-6"
                     />
-                    <span className="font-bold py-2 text-white">{`Moo #${moo.edition}`}</span>
+                    <span className="font-bold py-2 text-white">{`Moo #${index}`}</span>
                   </button>
                 </li>
               );

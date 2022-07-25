@@ -24,10 +24,11 @@ export default async function handler(req, res) {
 
     // Check if Moo has owner
     contract
-      .ownerOf(id)
-      .then(() => {
+      .tokenURI(id)
+      .then((uri) => {
+        console.log(uri.replace("ipfs://", "https://ipfs.io/ipfs/"));
         // Fetch the Moo metadata
-        fetch(`${process.env.NEXT_PUBLIC_METADATA_URL}/${id}`)
+        fetch(uri.replace("ipfs://", "https://ipfs.io/ipfs/"))
           .then((response) => response.json())
           .then((metadata) => {
             res.status(200).json(metadata);
