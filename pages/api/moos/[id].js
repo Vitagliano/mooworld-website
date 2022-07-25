@@ -26,7 +26,6 @@ export default async function handler(req, res) {
     contract
       .tokenURI(id)
       .then((uri) => {
-        console.log(uri.replace("ipfs://", "https://ipfs.io/ipfs/"));
         // Fetch the Moo metadata
         fetch(uri.replace("ipfs://", "https://ipfs.io/ipfs/"))
           .then((response) => response.json())

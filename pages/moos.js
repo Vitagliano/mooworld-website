@@ -12,15 +12,16 @@ import { toast } from "react-toastify";
 const MooPage = () => {
   const [userMoos, setUserMoos] = useState([]);
   const [mooSelected, setMooSelected] = useState(null);
+  const [balance, setBalance] = useState(0);
   const { activate, deactivate, active, account, web3 } = useWeb3();
 
-  const { mooContract, getUserMoosTokens, getMooMetadata } = useMoos(
-    web3,
-    account
-  );
+  const { mooContract, getUserMoosTokens, getMooMetadata, getBalanceOf } =
+    useMoos(web3, account);
 
-  useEffect(() => {
+  useEffect(async () => {
     if (active && mooContract && userMoos.length === 0) {
+      const userBalance = await getBalanceOf();
+      setBalance(userBalance);
       const getMoosPromise = new Promise((resolve, reject) => {
         getUserMoosTokens()
           .then((moos) => {
@@ -85,7 +86,24 @@ const MooPage = () => {
           </h1>
           <ul className="grid grid-cols-1 sm:grid-cols-4 gap-4">
             {userMoos.map((moo, index) => {
-              if (!moo) return null;
+              if (moo.length === 0 && balance > 0) {
+                <li
+                  key="moo world unrevealed"
+                  className="flex flex-col items-center justify-center"
+                >
+                  <button type="button" onClick={() => handleOpenModal(moo)}>
+                    <img
+                      src={
+                        "https://ipfs.io/ipfs/bafybeicsxlgdsvw7xeni4wavifengbdhonwihdxhwsm5n4kmwodyw7ls3m/moo-world-unrevealed.gif"
+                      }
+                      alt="moo world unrevealed"
+                      className="w-60 h-60 rounded-xl mb-6"
+                    />
+                    <span className="font-bold py-2 text-white">{`Moo #${index}`}</span>
+                  </button>
+                </li>;
+              }
+
               return (
                 <li
                   key={moo.name}
@@ -93,10 +111,14 @@ const MooPage = () => {
                 >
                   <button type="button" onClick={() => handleOpenModal(moo)}>
                     <img
-                      src={moo.image.replace(
-                        "ipfs://",
-                        "https://cloudflare-ipfs.com/ipfs/"
-                      )}
+                      src={
+                        moo.image
+                          ? moo.image.replace(
+                              "ipfs://",
+                              "https://cloudflare-ipfs.com/ipfs/"
+                            )
+                          : "https://ipfs.io/ipfs/bafybeicsxlgdsvw7xeni4wavifengbdhonwihdxhwsm5n4kmwodyw7ls3m/moo-world-unrevealed.gif"
+                      }
                       alt={moo.name}
                       className="w-60 h-60 rounded-xl mb-6"
                     />
