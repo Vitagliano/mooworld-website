@@ -89,6 +89,7 @@ const MintBox = () => {
       });
     }
   }
+  console.log("account", account);
 
   const MintContent = () => {
     return (

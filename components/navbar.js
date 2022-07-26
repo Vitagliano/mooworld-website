@@ -130,12 +130,21 @@ export default function Navbar() {
                   </button>
                 </Link>
               )}
-              <button
-                className="p-[16px] backdrop-blur-lg rounded-xl border-[1px] border-white/10 px-10 bg-blue/75 text-white ease-in-out hover:bg-blue hover:border-white duration-300"
-                onClick={() => activate()}
-              >
-                {connectButtonState}
-              </button>
+              {active ? (
+                <button
+                  className="p-[16px] backdrop-blur-lg rounded-xl border-[1px] border-white/10 px-10 bg-blue/75 text-white ease-in-out hover:bg-blue hover:border-white duration-300"
+                  onClick={() => deactivate()}
+                >
+                  {connectButtonState}
+                </button>
+              ) : (
+                <button
+                  className="p-[16px] backdrop-blur-lg rounded-xl border-[1px] border-white/10 px-10 bg-blue/75 text-white ease-in-out hover:bg-blue hover:border-white duration-300"
+                  onClick={() => activate()}
+                >
+                  {connectButtonState}
+                </button>
+              )}
             </div>
           </div>
         </div>
@@ -224,14 +233,26 @@ export default function Navbar() {
                 <div className="w-full pt-4">
                   <div className="border-t pt-4 border-blue-100">
                     <div className="w-full flex items-center justify-between pt-1">
-                      <button
-                        onClick={() => activate()}
-                        className="flex items-center"
-                      >
-                        <p className="leading-4 mb-0 p-[16px] w-full p-[16px] backdrop-blur-lg rounded-xl border-[1px] border-white/10  bg-blue/75 text-white ease-in-out hover:bg-blue hover:border-white duration-300">
-                          {connectButtonState}
-                        </p>
-                      </button>
+                      {active ? (
+                        <button
+                          onClick={() => deactivate()}
+                          className="flex items-center"
+                        >
+                          <p className="leading-4 mb-0 p-[16px] w-full backdrop-blur-lg rounded-xl border-[1px] border-white/10  bg-blue/75 text-white ease-in-out hover:bg-blue hover:border-white duration-300">
+                            {connectButtonState}
+                          </p>
+                        </button>
+                      ) : (
+                        <button
+                          onClick={() => activate()}
+                          className="flex items-center"
+                        >
+                          <p className="leading-4 mb-0 p-[16px] w-full backdrop-blur-lg rounded-xl border-[1px] border-white/10  bg-blue/75 text-white ease-in-out hover:bg-blue hover:border-white duration-300">
+                            {connectButtonState}
+                          </p>
+                        </button>
+                      )}
+
                       <ul className="flex">
                         <li className="cursor-pointer mr-2">
                           <div className="leading-4 p-[16px] backdrop-blur-lg rounded-xl border-[1px] border-white/10  bg-blue/75 text-white ease-in-out hover:bg-blue hover:border-white duration-300">
