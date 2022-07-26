@@ -6,7 +6,6 @@ import { ethers } from "ethers";
 import Particles from "react-tsparticles";
 import useWeb3 from "../hooks/useWeb3";
 import useMoos from "../hooks/useMoos";
-import MooTag from "../components/MooTag";
 
 import { toast } from "react-toastify";
 
@@ -81,8 +80,6 @@ const MooPage = () => {
   const MooListContent = () => {
     return (
       <div className="flex justify-center items-center w-full mt-4 lg:mt-0 z-50">
-        <MooTag mooQuantity={2} />
-
         <div className="w-full backdrop-blur-lg border-[1px] border-white/10 rounded-xl md:w-11/12 xl:w-10/12 bg-gradient-to-r from-indigo-300/10 to-blue/10 md:py-8 md:px-8 px-5 py-4 xl:px-12 xl:py-16 xl:pb-8">
           <h1 className="text-xl sm:text-3xl mt-8 font-extrabold text-white mb-6">
             My Moos
