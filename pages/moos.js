@@ -6,6 +6,7 @@ import { ethers } from "ethers";
 import Particles from "react-tsparticles";
 import useWeb3 from "../hooks/useWeb3";
 import useMoos from "../hooks/useMoos";
+import MooTag from "../components/MooTag";
 
 import { toast } from "react-toastify";
 
@@ -80,36 +81,41 @@ const MooPage = () => {
   const MooListContent = () => {
     return (
       <div className="flex justify-center items-center w-full mt-4 lg:mt-0 z-50">
+        <MooTag mooQuantity={2} />
+
         <div className="w-full backdrop-blur-lg border-[1px] border-white/10 rounded-xl md:w-11/12 xl:w-10/12 bg-gradient-to-r from-indigo-300/10 to-blue/10 md:py-8 md:px-8 px-5 py-4 xl:px-12 xl:py-16 xl:pb-8">
           <h1 className="text-xl sm:text-3xl mt-8 font-extrabold text-white mb-6">
             My Moos
           </h1>
           <ul className="grid grid-cols-1 sm:grid-cols-4 gap-4">
+            {userMoos.length === 0 && balance > 0 && (
+              <li
+                key="moo world unrevealed"
+                className="flex flex-col items-center justify-center"
+              >
+                <img
+                  src={
+                    "https://ipfs.io/ipfs/bafybeicsxlgdsvw7xeni4wavifengbdhonwihdxhwsm5n4kmwodyw7ls3m/moo-world-unrevealed.gif"
+                  }
+                  alt="moo world unrevealed"
+                  className="w-60 h-60 rounded-xl mb-6"
+                />
+                <span className="font-bold py-2 text-white">
+                  Moo World unrevealed
+                </span>
+              </li>
+            )}
             {userMoos.map((moo, index) => {
-              if (moo.length === 0 && balance > 0) {
-                <li
-                  key="moo world unrevealed"
-                  className="flex flex-col items-center justify-center"
-                >
-                  <button type="button" onClick={() => handleOpenModal(moo)}>
-                    <img
-                      src={
-                        "https://ipfs.io/ipfs/bafybeicsxlgdsvw7xeni4wavifengbdhonwihdxhwsm5n4kmwodyw7ls3m/moo-world-unrevealed.gif"
-                      }
-                      alt="moo world unrevealed"
-                      className="w-60 h-60 rounded-xl mb-6"
-                    />
-                    <span className="font-bold py-2 text-white">{`Moo #${index}`}</span>
-                  </button>
-                </li>;
-              }
-
               return (
                 <li
                   key={moo.name}
-                  className="flex flex-col items-center justify-center"
+                  className="flex flex-col items-center justify-center p-[1rem] bg-white rounded-[8px]"
                 >
-                  <button type="button" onClick={() => handleOpenModal(moo)}>
+                  <button
+                    className="outline-none border-none outline-0 focus:outline-none"
+                    type="button"
+                    onClick={() => handleOpenModal(moo)}
+                  >
                     <img
                       src={
                         moo.image
@@ -120,9 +126,9 @@ const MooPage = () => {
                           : "https://ipfs.io/ipfs/bafybeicsxlgdsvw7xeni4wavifengbdhonwihdxhwsm5n4kmwodyw7ls3m/moo-world-unrevealed.gif"
                       }
                       alt={moo.name}
-                      className="w-60 h-60 rounded-xl mb-6"
+                      className="w-[100%] rounded-xl mb-6"
                     />
-                    <span className="font-bold py-2 text-white">{`Moo #${index}`}</span>
+                    <span className="py-2 text-black">{`Moo #${index}`}</span>
                   </button>
                 </li>
               );
@@ -136,38 +142,48 @@ const MooPage = () => {
   const MooModal = () => {
     return (
       <div
-        className="bg-semitransparent backdrop-blur-xl w-full h-screen absolute top-0 left-0 right-0 flex items-center justify-center"
+        className="bg-semitransparent backdrop-blur-xl fixed h-screen w-full top-0 left-0 right-0 flex items-center justify-center z-50"
         onClick={() => setMooSelected(null)}
       >
         <div
-          className="w-3/4 h-3/4 rounded-xl bg-brown-100 shadow-2xl p-5 flex flex-row "
+          className="bg-white rounded-xl bg-brown-100 shadow-2xl p-5 flex flex-row  w-[50%]"
           onClick={(e) => e.stopPropagation()}
         >
           <img
             src={mooSelected.image.replace("ipfs://", "https://ipfs.io/ipfs/")}
             alt={mooSelected.name}
-            className="w-96 h-96 mx-auto rounded-xl"
+            className="w-96 h-96 rounded-xl"
           />
-          <div className="w-2/4 p-5">
-            <h2 className="font-extrabold text-xl text-white pb-5">
-              {mooSelected.name}
+
+          <div className="w-full p-5">
+            <h2 className="font-bold text-[48px] text-black pb-[1rem]">
+              {`Moo #${mooSelected.edition}`}
             </h2>
-            <table className="w-full">
-              <tr>
-                <th className="text-left text-white">Attribute</th>
-                <th className="text-left text-white">Value</th>
-                <th className="text-left text-white">Rarity</th>
-              </tr>
-              {mooSelected.attributes.map((attr) => {
-                return (
-                  <tr>
-                    <td className="text-white">{attr.trait_type}</td>
-                    <td className="text-white">{attr.value}</td>
-                    <td className="text-white">Soon!</td>
-                  </tr>
-                );
-              })}
-            </table>
+            <div className="mb-[1rem]">
+              <span className="text-[#aeafc2] mb-[1rem] text-[1.5rem] block">
+                Description
+              </span>
+              <p className="text-[#242424] text-[1.1rem]">
+                2000 Cows discovering the universe of $AVAX. Now they must
+                exploit the biodiversity of these planets to survive and build a
+                community!
+              </p>
+            </div>
+            <div className="bg-[#F6F6FF] border-[1px] border-[rgb(235, 235, 245)] rounded-[0.75rem] p-[1rem]">
+              <span className="mb-[1rem] block text-[1.3rem]">
+                Properties {mooSelected?.attributes.length}
+              </span>
+              <div className="grid gap-4 grid-cols-3 ">
+                {mooSelected.attributes.map((attr) => {
+                  return (
+                    <div className="border-[1px] border-[rgb(235, 235, 245)] p-[1rem] flex flex-col rounded-[0.75rem] bg-white text-center">
+                      <span className="text-[#aeafc2]">{attr.trait_type}</span>
+                      <span className="text-[#242424]">{attr.value}</span>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
           </div>
         </div>
       </div>

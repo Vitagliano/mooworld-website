@@ -67,7 +67,7 @@ const useMoos = (web3, account) => {
 
   const getBalanceOf = async () => {
     const response = await contract.balanceOf(account);
-    return response;
+    return Number(response);
   };
 
   return {

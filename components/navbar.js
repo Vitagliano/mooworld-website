@@ -56,7 +56,7 @@ export default function Navbar() {
 
   return (
     <Container>
-      <div className="font-pixel bg-blue-100 pt-10 pb-20 relative z-[999]">
+      <div className="font-pixel bg-blue-100 pt-10 pb-20 relative z-[49]">
         <div className="mx-auto max-w-full sm:max-w-full md:max-w-7xl lg:max-w-7xl flex flex-row items-center px-6 sm:px-6 lg:px-0 justify-between">
           <div className="cursor-pointer">
             <Link href="/">
