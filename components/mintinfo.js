@@ -12,7 +12,7 @@ export default function MintInfo() {
                 <div className="box">
                   <MintBox />
                 </div>
-                <div className="w-full flex justify-center">
+                <div className="w-full flex justify-end">
                   <img
                     src="./img/show.gif"
                     alt="Moo World"
