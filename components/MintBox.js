@@ -105,7 +105,7 @@ const MintBox = () => {
     return (
       <div className="flex flex-col w-full">
         <div className="p-8 backdrop-blur-lg rounded-xl border-[1px] border-white/10 px-12 bg-blue/75 text-white mb-6">
-          <div className="flex justify-between ">
+          <div className="flex flex-col lg:flex-row justify-between ">
             <h1 className="text-4xl sm:text-4xl md:text-4xl lg:text-4x mb-4">
               Mint a Moo
             </h1>
@@ -137,7 +137,7 @@ const MintBox = () => {
           </div>
         </div>
         <div className=" p-8 backdrop-blur-lg rounded-xl border-[1px] border-white/10 px-12 bg-blue/75 text-white">
-          <div className="flex flex-row justify-between gap-4">
+          <div className="flex flex-col lg:flex-row justify-between gap-4">
             <div className="">
               <span className="text-base font-medium text-white">Price</span>
               <div className="flex justify-between mt-[24px]">
@@ -157,7 +157,7 @@ const MintBox = () => {
               <div className="flex justify-between gap-4 mt-[12px]">
                 <button
                   onClick={() => changeQuantity("subtract")}
-                  className="flex items-center justify-center h-[64px] w-[64px] sm:text-[44px] md:text-[48px] lg:text-[48px] px-[16px] pt-[16px] pb-[10px] text-shadow backdrop-blur-lg rounded-xl border-[1px] border-white/10 bg-blue/75 text-white ease-in-out hover:bg-blue hover:border-white duration-300"
+                  className="flex items-center justify-center h-[64px] w-[64px] sm:text-[48px] md:text-[48px] lg:text-[48px] px-[16px] pt-[16px] pb-[10px] text-shadow backdrop-blur-lg rounded-xl border-[1px] border-white/10 bg-blue/75 text-white ease-in-out hover:bg-blue hover:border-white duration-300"
                 >
                   -
                 </button>
@@ -165,13 +165,13 @@ const MintBox = () => {
                   <h2 className="text-3xl sm:text-3xl md:text-3xl lg:text-5xl text-center">
                     {mintQuantity}/
                   </h2>
-                  <h3 className="text-white/70 text-2xl sm:text-2xl md:text-3xl lg:text-4xl text-center">
-                    4 max
+                  <h3 className="text-white/70 text-2xl sm:text-2xl md:text-3xl lg:text-4xl text-center lg:flex lg:flex-row">
+                    4 <span className="hidden lg:flex text-1xl">max</span>
                   </h3>
                 </div>
                 <button
                   onClick={() => changeQuantity("add")}
-                  className="flex items-center justify-center h-[64px] w-[64px] sm:text-[44px] md:text-[48px] lg:text-[48px] px-[16px] pt-[16px] pb-[10px] text-shadow backdrop-blur-lg rounded-xl border-[1px] border-white/10 bg-blue/75 text-white ease-in-out hover:bg-blue hover:border-white duration-300"
+                  className="flex items-center justify-center h-[64px] w-[64px] sm:text-[48px] md:text-[48px] lg:text-[48px] px-[16px] pt-[16px] pb-[10px] text-shadow backdrop-blur-lg rounded-xl border-[1px] border-white/10 bg-blue/75 text-white ease-in-out hover:bg-blue hover:border-white duration-300"
                 >
                   +
                 </button>
