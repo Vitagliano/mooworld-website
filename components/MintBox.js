@@ -53,6 +53,8 @@ const MintBox = () => {
     }
   }, [active, web3]);
 
+  console.log("contract", contract);
+
   async function mint() {
     if (account) {
       setIsMinting(true);
@@ -74,9 +76,18 @@ const MintBox = () => {
 
             resolve(link);
           })
-          .catch(() => {
+          .catch((err) => {
             setIsMinting(false);
             reject();
+            console.log("error", err);
+            toast.error(err.data.message, {
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: false,
+              theme: "colored",
+            });
           });
       });
 
@@ -89,7 +100,6 @@ const MintBox = () => {
       });
     }
   }
-  console.log("account", account);
 
   const MintContent = () => {
     return (
@@ -175,7 +185,9 @@ const MintBox = () => {
                 onClick={mint}
                 className="p-[16px] w-full backdrop-blur-lg rounded-xl border-[1px] border-white/10 px-10 bg-burple text-white ease-in-out duration-300 hover:bg-burple/80 hover:border-white"
               >
-                MINT ({mintQuantity * mintPrice} AVAX)
+                {isMinting
+                  ? "Minting..."
+                  : `MINT (${mintQuantity * mintPrice} AVAX)`}
               </button>
             ) : (
               <button
