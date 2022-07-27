@@ -31,7 +31,6 @@ const useMoos = (web3, account) => {
           index++;
         }
       }
-      console.log(tokens);
       return tokens;
     }
   };
