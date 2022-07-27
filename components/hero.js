@@ -233,24 +233,7 @@ export default function Hero() {
           },
         }}
       />
-      <Container className="flex flex-wrap p-0">
-        <div className="flex justify-center items-center w-full mt-4 lg:mt-0">
-          <div className="relative z-1 top-52 sm:top-52 md:top-52 lg:top-64 flex justify-center items-center">
-            <img
-              src="./img/Planet.png"
-              alt="Moo World Planet"
-              className="w-9/12 sm:w-9/12 md:w-9/12 lg:w-3/6"
-            />
-          </div>
-          <div className="absolute z-999 flex justify-center items-center">
-            <img
-              src="./img/Moo.png"
-              alt="Moo World"
-              className="w-6/12 sm:w-6/12 md:w-6/12 lg:w-3/6"
-            />
-          </div>
-        </div>
-      </Container>
+ 
     </>
   );
 }

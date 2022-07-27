@@ -11,6 +11,7 @@ module.exports = {
         trueGray: colors.trueGray,
         blue: "#1f1e3e",
         purple: "#24142c",
+        burple: "#454FBF",
       },
     },
     fontFamily: {

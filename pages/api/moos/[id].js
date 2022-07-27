@@ -1,8 +1,9 @@
 import Cors from "cors";
-import mooWorldAbi from "../../../abi/mooWorld.json";
+import mooWorldAbi from "../../../abi/mooAbi.json";
 import { ethers } from "ethers";
 
 export default async function handler(req, res) {
+  console.log(req.query);
   try {
     // Ignore .json extension
     const id = req.query.id.replace(/\D+/g, "");
@@ -16,17 +17,17 @@ export default async function handler(req, res) {
     );
     // Loading Moo abi
     const contract = new ethers.Contract(
-      process.env.NEXT_PUBLIC_CONTRACT_MOO_WORLD_ADDRESS,
+      process.env.NEXT_PUBLIC_CONTRACT_MINT_ADDRESS,
       mooWorldAbi,
       web3
     );
 
     // Check if Moo has owner
     contract
-      .ownerOf(id)
-      .then(() => {
+      .tokenURI(id)
+      .then((uri) => {
         // Fetch the Moo metadata
-        fetch(`${process.env.NEXT_PUBLIC_METADATA_URL}/${id}.json`)
+        fetch(uri.replace("ipfs://", "https://ipfs.io/ipfs/"))
           .then((response) => response.json())
           .then((metadata) => {
             res.status(200).json(metadata);
