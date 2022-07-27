@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Container from "../components/container";
 import Navbar from "../components/navbar";
 import { ethers } from "ethers";
-
+import Head from "next/head";
 import Particles from "react-tsparticles";
 import useWeb3 from "../hooks/useWeb3";
 import useMoos from "../hooks/useMoos";
@@ -189,6 +189,15 @@ const MooPage = () => {
 
   return (
     <>
+      <Head>
+        <title>View Moos - Moo World</title>
+        <meta
+          name="description"
+          content="2000 Cows discovering the universe of Avalanche.
+        But now they must exploit the biodiversity of these planets to survive!"
+        />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Navbar />
       <Particles
         id="tsparticles"
