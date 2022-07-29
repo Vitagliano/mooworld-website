@@ -9,6 +9,8 @@ import useMoos from "../hooks/useMoos";
 
 import { toast } from "react-toastify";
 import MooTag from "../components/MooTag";
+import SectionTitle from "../components/sectionTitle";
+import { FaTwitter } from "react-icons/fa";
 
 const MooPage = () => {
   const [userMoos, setUserMoos] = useState([]);
@@ -63,78 +65,99 @@ const MooPage = () => {
 
   const DisconectedContent = () => {
     return (
-      <div className="flex justify-center items-center w-full mt-4 lg:mt-0 z-50">
-        <div className="w-full backdrop-blur-lg border-[1px] border-white/10 rounded-xl md:w-11/12 xl:w-10/12 bg-gradient-to-r from-indigo-300/10 to-blue/10 md:py-8 md:px-8 px-5 py-4 xl:px-12 xl:py-16 xl:pb-8">
-          <h4 className="text-white text-[28px] text-center">
-            Connect your wallet
-          </h4>
-          <div className="flex justify-center">
-            <button className="text-white text-[20px]" onClick={activate}>
-              Connect
-            </button>
+      <>
+        <div className="flex justify-center items-center w-full mt-4 lg:mt-0 z-50">
+          <div className="w-full flex-row flex justify-between backdrop-blur-lg border-[1px] border-white/10 rounded-xl md:w-11/12 xl:w-10/12 bg-gradient-to-r from-indigo-300/10 to-blue/10 md:py-8 md:px-8 px-5 py-4 xl:px-12 xl:py-16">
+            <h4 className="text-white text-[42px] text-center">View Moos</h4>
+            <div className="flex justify-center">
+              <button
+                className="p-[16px] mt-2 backdrop-blur-lg rounded-xl border-[1px] border-white/10 px-16 bg-burple text-white ease-in-out duration-300 hover:bg-burple/80 hover:border-white"
+                onClick={activate}
+              >
+                Connect Wallet
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      </>
     );
   };
 
   const MooListContent = () => {
     return (
       <div className="flex justify-center items-center w-full mt-4 lg:mt-0 z-50">
-        <div className="w-full backdrop-blur-lg border-[1px] border-white/10 rounded-xl md:w-11/12 xl:w-10/12 bg-gradient-to-r from-indigo-300/10 to-blue/10 md:py-8 md:px-8 px-5 py-4 xl:px-12 xl:py-16 xl:pb-8">
-          <div className="flex items-center pb-[1rem] pt-[1rem] justify-between">
-            <h1 className="text-xl sm:text-3xl font-extrabold text-white">
-              My Moos
-            </h1>
-            <MooTag mooQuantity={userMoos.length} />
+        <div className="w-full flex-col flex justify-between backdrop-blur-lg border-[1px] border-white/10 rounded-xl md:w-11/12 xl:w-10/12 bg-gradient-to-r from-indigo-300/10 to-blue/10 md:py-8 md:px-8 px-5 py-4 xl:px-12 xl:py-16">
+          <div className="w-full flex-row flex justify-between items-center">
+            <h4 className="text-white text-[42px] text-center">
+              View Moos ({userMoos.length})
+            </h4>
+            <div className="flex justify-center">
+              <MooTag mooQuantity={userMoos.length} />
+            </div>
           </div>
-          <ul className="grid grid-cols-1 sm:grid-cols-4 gap-4">
-            {userMoos.length === 0 && balance > 0 && (
-              <li
-                key="moo world unrevealed"
-                className="flex flex-col items-center justify-center"
-              >
-                <img
-                  src={
-                    "https://ipfs.io/ipfs/bafybeicsxlgdsvw7xeni4wavifengbdhonwihdxhwsm5n4kmwodyw7ls3m/moo-world-unrevealed.gif"
-                  }
-                  alt="moo world unrevealed"
-                  className="w-60 h-60 rounded-xl mb-6"
-                />
-                <span className="font-bold py-2 text-white">
-                  Moo World unrevealed
-                </span>
-              </li>
-            )}
-            {userMoos.map((moo, index) => {
-              return (
-                <li
-                  key={moo.name}
-                  className="flex flex-col items-center justify-center p-[1rem] bg-white rounded-[8px] hover:scale-[1.04] transition-all duration-200"
-                >
-                  <button
-                    className="outline-none border-none outline-0 focus:outline-none"
-                    type="button"
-                    onClick={() => handleOpenModal(moo)}
+          <div className="w-full mt-8">
+            <ul className="grid grid-cols-1 sm:grid-cols-4 gap-4">
+              {userMoos.length === 0 && balance > 0 && (
+                <ul className="flex flex-row gap-10">
+                  <li className="flex flex-col ">
+                    <div className="bg-blue/90 w-60 h-60 animate-pulse rounded-xl mb-6"></div>
+                    <span className="font-bold w-full text-center py-2 text-white">
+                      Loading Moos...
+                    </span>
+                  </li>
+                  <li className="flex flex-col ">
+                    <div className="bg-blue/90 w-60 h-60 animate-pulse rounded-xl mb-6"></div>
+
+                    <span className="font-bold w-full text-center py-2 text-white">
+                      Loading Moos...
+                    </span>
+                  </li>
+                  <li className="flex flex-col ">
+                    <div className="bg-blue/90 w-60 h-60 animate-pulse rounded-xl mb-6"></div>
+
+                    <span className="font-bold w-full text-center py-2 text-white">
+                      Loading Moos...
+                    </span>
+                  </li>
+                  <li className="flex flex-col ">
+                    <div className="bg-blue/90 w-60 h-60 animate-pulse rounded-xl mb-6"></div>
+
+                    <span className="font-bold w-full text-center py-2 text-white">
+                      Loading Moos...
+                    </span>
+                  </li>
+                </ul>
+              )}
+              {userMoos.map((moo, index) => {
+                return (
+                  <li
+                    key={index}
+                    className="flex flex-col items-center justify-center p-[1rem] bg-blue border-[1px] border-white/10 text-white rounded-[8px] hover:scale-[1.04] transition-all duration-200"
                   >
-                    <img
-                      src={
-                        moo.image
-                          ? moo.image.replace(
-                              "ipfs://",
-                              "https://cloudflare-ipfs.com/ipfs/"
-                            )
-                          : "https://ipfs.io/ipfs/bafybeicsxlgdsvw7xeni4wavifengbdhonwihdxhwsm5n4kmwodyw7ls3m/moo-world-unrevealed.gif"
-                      }
-                      alt={moo.name}
-                      className="w-[100%] rounded-xl mb-6"
-                    />
-                    <span className="py-2 text-black">{`Moo #${index}`}</span>
-                  </button>
-                </li>
-              );
-            })}
-          </ul>
+                    <button
+                      className="outline-none border-none outline-0 focus:outline-none"
+                      type="button"
+                      onClick={() => handleOpenModal(moo)}
+                    >
+                      <img
+                        src={
+                          moo?.image
+                            ? moo?.image.replace(
+                                "ipfs://",
+                                "https://cloudflare-ipfs.com/ipfs/"
+                              )
+                            : "https://ipfs.io/ipfs/bafybeicsxlgdsvw7xeni4wavifengbdhonwihdxhwsm5n4kmwodyw7ls3m/moo-world-unrevealed.gif"
+                        }
+                        alt={moo?.name}
+                        className="w-[100%] rounded-xl mb-6"
+                      />
+                      <span className="py-2">{`Moo #${index}`}</span>
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
         </div>
       </div>
     );
@@ -147,7 +170,7 @@ const MooPage = () => {
         onClick={() => setMooSelected(null)}
       >
         <div
-          className="bg-white rounded-xl bg-brown-100 shadow-2xl p-5 flex flex-row  w-[50%]"
+          className="backdrop-blur-lg rounded-xl border-[1px] border-white/10 bg-blue/75 text-white shadow-2xl p-5 flex flex-row w-[50%]"
           onClick={(e) => e.stopPropagation()}
         >
           <img
@@ -156,30 +179,53 @@ const MooPage = () => {
             className="w-96 h-96 rounded-xl"
           />
 
-          <div className="w-full p-5">
-            <h2 className="font-bold text-[48px] text-black pb-[1rem]">
-              {`Moo #${mooSelected.edition}`}
-            </h2>
-            <div className="mb-[1rem]">
-              <span className="text-[#aeafc2] mb-[1rem] text-[1.5rem] block">
+          <div className="w-full ml-5">
+            <div className="flex justify-between items-center">
+              <h2 className="font-bold text-[48px] text-white">
+                {`Moo #${mooSelected.id}`}
+              </h2>
+
+              <div className="flex flex-row">
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href={`https://twitter.com/share?text=Check%20out%20Moo%20World%20%23${mooSelected.id}%20on%20@0xCampfire&hashtags=AVAX,MooWorld&url=https://campfire.exchange/collections/0xcfd8402927f07a4d1e4dfe7f9c60f6ebf9ed3673/${mooSelected.id}`}
+                  data-show-count="false"
+                >
+                  <button className="p-[10px] px-6 mr-4 backdrop-blur-lg rounded-xl border-[1px] border-white/10 bg-blue/75 text-white ease-in-out flex flex-row gap-2 justify-center items-center hover:bg-blue hover:border-white duration-300">
+                    <FaTwitter size={18} /> Share
+                  </button>
+                </a>
+              </div>
+            </div>
+
+            <div className="mt-2">
+              <span className="text-white/80 text-[1.5rem] block  mb-2">
                 Description
               </span>
-              <p className="text-[#242424] text-[1.1rem]">
+              <p className="text-white text-[1rem]">
                 2000 Cows discovering the universe of $AVAX. Now they must
                 exploit the biodiversity of these planets to survive and build a
                 community!
               </p>
             </div>
-            <div className="bg-[#F6F6FF] border-[1px] border-[rgb(235, 235, 245)] rounded-[0.75rem] p-[1rem]">
-              <span className="mb-[1rem] block text-[1.3rem]">
-                Properties {mooSelected?.attributes.length}
+            <div className="mt-6">
+              <span className="text-white/80 text-[1.5rem] flex gap-2 mb-2">
+                Properties <span>({mooSelected?.attributes.length})</span>
               </span>
               <div className="grid gap-4 grid-cols-3 ">
                 {mooSelected.attributes.map((attr) => {
                   return (
-                    <div className="border-[1px] border-[rgb(235, 235, 245)] p-[1rem] flex flex-col rounded-[0.75rem] bg-white text-center">
-                      <span className="text-[#aeafc2]">{attr.trait_type}</span>
-                      <span className="text-[#242424]">{attr.value}</span>
+                    <div
+                      key={attr.trait_type}
+                      className="border-[1px] border-[rgb(235, 235, 245)] p-[1rem] flex flex-row justify-between rounded-xl backdrop-blur-xl border-[1px] border-white/10 bg-gradient-to-r from-indigo-300/10 to-blue/10"
+                    >
+                      <div className="flex flex-col">
+                        <span className="text-white/60 text-sm">
+                          {attr.trait_type}
+                        </span>
+                        <span className="text-white text-lg">{attr.value}</span>
+                      </div>
                     </div>
                   );
                 })}

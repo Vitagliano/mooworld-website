@@ -93,18 +93,14 @@ export default function Navbar() {
           <div className="sm:hidden md:flex lg:flex hidden flex-col sm:flex-col md:flex-row lg:flex-row items-center">
             <div>
               <Link href="https://discord.gg/mooworld">
-                <a target="_blank">
-                  <button className="p-[12px] mr-4 backdrop-blur-lg rounded-xl border-[1px] border-white/10 bg-blue/75 text-white ease-in-out  hover:bg-blue hover:border-white duration-300">
-                    <FaDiscord size={34} />
-                  </button>
-                </a>
+                <button className="p-[12px] mr-4 backdrop-blur-lg rounded-xl border-[1px] border-white/10 bg-blue/75 text-white ease-in-out  hover:bg-blue hover:border-white duration-300">
+                  <FaDiscord size={34} />
+                </button>
               </Link>
               <Link href="https://twitter.com/mooworldavax">
-                <a target="_blank">
-                  <button className="p-[12px] mr-4 backdrop-blur-lg rounded-xl border-[1px] border-white/10 bg-blue/75 text-white ease-in-out  hover:bg-blue hover:border-white duration-300">
-                    <FaTwitter size={34} />
-                  </button>
-                </a>
+                <button className="p-[12px] mr-4 backdrop-blur-lg rounded-xl border-[1px] border-white/10 bg-blue/75 text-white ease-in-out  hover:bg-blue hover:border-white duration-300">
+                  <FaTwitter size={34} />
+                </button>
               </Link>
             </div>
             <div>
@@ -121,10 +117,7 @@ export default function Navbar() {
                 Stake
               </button>
               {active && (
-                <Link
-                  target="_blank"
-                  href="https://joepegs.com/collections/0xcFd8402927f07A4D1e4DFe7f9C60f6EbF9Ed3673"
-                >
+                <Link href="/moos">
                   <button className="p-[16px] mr-4 backdrop-blur-lg rounded-xl border-[1px] border-white/10 px-10 bg-blue/75 text-white ease-in-out  hover:bg-blue hover:border-white duration-300">
                     View Moos
                   </button>
@@ -197,21 +190,17 @@ export default function Navbar() {
                     </div>
                   </div>
                   <ul className="f-m-m">
-                    <a className="cursor-pointer" target="_blank">
-                      <li className="text-gray-800 pt-10">
-                        <div className="flex items-center">
-                          {active && (
-                            <Link href="https://joepegs.com/collections/0xcFd8402927f07A4D1e4DFe7f9C60f6EbF9Ed3673">
-                              <a target="_blank">
-                                <button className="cursor-pointer p-[16px] bg-blue/75 text-white/80 ease-in-out duration-300 hover:text-white/100">
-                                  View Moos
-                                </button>
-                              </a>
-                            </Link>
-                          )}
-                        </div>
-                      </li>
-                    </a>
+                    <li className="text-gray-800 pt-10">
+                      <div className="flex items-center">
+                        {active && (
+                          <Link href="/moos">
+                            <button className="cursor-pointer p-[16px] bg-blue/75 text-white/80 ease-in-out duration-300 hover:text-white/100">
+                              View Moos
+                            </button>
+                          </Link>
+                        )}
+                      </div>
+                    </li>
                     <li className="text-gray-800">
                       <div className="flex items-center">
                         <button className="cursor-default p-[16px]  backdrop-blur-lg rounded-xl bg-blue/75 text-white/20 ease-in-out duration-300">
@@ -257,18 +246,14 @@ export default function Navbar() {
                         <li className="cursor-pointer mr-2">
                           <div className="leading-4 p-[16px] backdrop-blur-lg rounded-xl border-[1px] border-white/10  bg-blue/75 text-white ease-in-out hover:bg-blue hover:border-white duration-300">
                             <Link href="https://discord.gg/mooworld">
-                              <a target="_blank">
-                                <FaDiscord size={18} />
-                              </a>
+                              <FaDiscord size={18} />
                             </Link>
                           </div>
                         </li>
                         <li className="cursor-pointer">
                           <div className="leading-4 p-[16px] backdrop-blur-lg rounded-xl border-[1px] border-white/10  bg-blue/75 text-white ease-in-out hover:bg-blue hover:border-white duration-300s">
                             <Link href="https://twitter.com/mooworldavax">
-                              <a target="_blank">
-                                <FaTwitter size={18} />
-                              </a>
+                              <FaTwitter size={18} />
                             </Link>
                           </div>
                         </li>

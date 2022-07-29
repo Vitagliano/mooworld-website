@@ -53,8 +53,6 @@ const MintBox = () => {
     }
   }, [active, web3]);
 
-  console.log("contract", contract);
-
   async function mint() {
     if (account) {
       setIsMinting(true);
