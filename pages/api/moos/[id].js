@@ -17,7 +17,7 @@ export default async function handler(req, res) {
     );
     // Loading Moo abi
     const contract = new ethers.Contract(
-      process.env.NEXT_PUBLIC_CONTRACT_MINT_ADDRESS,
+      process.env.NEXT_PUBLIC_CONTRACT_MOO_WORLD_ADDRESS,
       mooWorldAbi,
       web3
     );

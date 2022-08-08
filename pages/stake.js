@@ -118,7 +118,7 @@ const StakePage = () => {
     setApproveForAll(true);
   };
 
-  const disconectedContent = () => {
+  const DisconectedContent = () => {
     return (
       <div className="flex justify-center items-center w-full mt-4 lg:mt-0 z-50">
         <div className="w-full backdrop-blur-lg border-[1px] border-white/10 rounded-xl md:w-11/12 xl:w-10/12 bg-gradient-to-r from-indigo-300/10 to-blue/10 md:py-8 md:px-8 px-5 py-4 xl:px-12 xl:py-16 xl:pb-8">
@@ -128,9 +128,14 @@ const StakePage = () => {
           <p className="text-white text-[20px] text-center">
             We couldn’t detect a wallet. Connect a wallet to stake.
           </p>
-          <button className="text-white text-[20px]" onClick={activate}>
-            Connect
-          </button>
+          <div className="flex justify-center">
+            <button
+              className="mt-4 p-[12px] px-10 mr-4 backdrop-blur-lg rounded-xl border-[1px] border-white/10 bg-blue/75 text-white ease-in-out hover:bg-blue hover:border-white duration-300 text-[22px]"
+              onClick={activate}
+            >
+              Connect
+            </button>
+          </div>
         </div>
       </div>
     );
@@ -138,8 +143,9 @@ const StakePage = () => {
 
   const connectedContent = () => {
     return (
-      <div className="grid overflow-hidden grid-cols-2 grid-rows-2 gap-2">
-        <div className="grid justify-center align-center text-white box row-start-1 row-end-2 backdrop-blur-lg border-[1px] border-white/10 rounded-xl bg-gradient-to-r from-indigo-300/10 to-blue/10 md:py-8 md:px-8 px-5 py-4 xl:px-12 xl:py-16 xl:pb-8">
+      <div className="grid overflow-hidden grid-cols-2 grid-rows-1 gap-4 grid-flow-row w-full mt-4 lg:mt-0 z-50">
+        <div></div>
+        <div className="w-full backdrop-blur-lg border-[1px] border-white/10 rounded-xl md:w-11/12 xl:w-10/12 bg-gradient-to-r from-indigo-300/10 to-blue/10 md:py-8 md:px-8 px-5 py-4 xl:px-12 xl:py-16 xl:pb-8">
           <h4 className="text-[20px] text-center">Account balance</h4>
           <span className="text-[28px] text-center w-full block">{`${ethers.utils.formatUnits(
             milk,
@@ -492,8 +498,8 @@ const StakePage = () => {
         }}
       />
       <Container className="flex flex-wrap p-0">
-        {!active && disconectedContent()}
-        <div className="w-full z-50">{active && connectedContent()}</div>
+        {!active && DisconectedContent()}
+        {active && connectedContent()}
       </Container>
     </>
   );

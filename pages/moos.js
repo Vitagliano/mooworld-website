@@ -68,8 +68,11 @@ const MooPage = () => {
           <h4 className="text-white text-[28px] text-center">
             Connect your wallet
           </h4>
+          <p className="text-white text-[20px] text-center">
+            We couldn’t detect a wallet. Connect a wallet to stake.
+          </p>
           <div className="flex justify-center">
-            <button className="text-white text-[20px]" onClick={activate}>
+            <button className="mt-4 p-[12px] px-10 mr-4 backdrop-blur-lg rounded-xl border-[1px] border-white/10 bg-blue/75 text-white ease-in-out hover:bg-blue hover:border-white duration-300 text-[22px]" onClick={activate}>
               Connect
             </button>
           </div>
@@ -339,7 +342,7 @@ const MooPage = () => {
           detectRetina: true,
           background: {
             color: "#131329",
-            image: "./img/Stars.png",
+            image: "../public/img/Stars.png",
             position: "50% 50%",
             repeat: "repeat",
             size: "cover",
@@ -363,27 +366,27 @@ const MooPage = () => {
                 options: {
                   images: [
                     {
-                      src: "./img/GreenMoo.png",
+                      src: "../public/img/GreenMoo.png",
                       width: 205,
                       height: 267,
                     },
                     {
-                      src: "./img/YellowMoo.png",
+                      src: "../public/img/YellowMoo.png",
                       width: 205,
                       height: 267,
                     },
                     {
-                      src: "./img/PinkMoo.png",
+                      src: "../public/img/PinkMoo.png",
                       width: 205,
                       height: 267,
                     },
                     {
-                      src: "./img/RedMoo.png",
+                      src: "../public/img/RedMoo.png",
                       width: 305,
                       height: 367,
                     },
                     {
-                      src: "./img/BlueMoo.png",
+                      src: "../public/img/BlueMoo.png",
                       width: 405,
                       height: 467,
                     },
