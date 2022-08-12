@@ -114,22 +114,19 @@ export default function Navbar() {
               >
                 Shop
               </button>
-              <button
-                disabled
-                className="cursor-default p-[16px] mr-4 backdrop-blur-lg rounded-xl border-[1px] border-white/10 px-10 bg-blue/75 text-white/20 ease-in-out duration-300"
-              >
-                Stake
-              </button>
+              <Link passHref href="https://stake.mooworld.io">
+                <button className="p-[16px] mr-4 backdrop-blur-lg rounded-xl border-[1px] border-white/10 px-10 bg-blue/75 text-white ease-in-out  hover:bg-blue hover:border-white duration-300">
+                  Stake
+                </button>
+              </Link>
               {active && (
-                <Link
-                  target="_blank"
-                  href="https://joepegs.com/collections/0xcFd8402927f07A4D1e4DFe7f9C60f6EbF9Ed3673"
-                >
+                <Link passHref href="/moos">
                   <button className="p-[16px] mr-4 backdrop-blur-lg rounded-xl border-[1px] border-white/10 px-10 bg-blue/75 text-white ease-in-out  hover:bg-blue hover:border-white duration-300">
                     View Moos
                   </button>
                 </Link>
               )}
+
               {active ? (
                 <button
                   className="p-[16px] backdrop-blur-lg rounded-xl border-[1px] border-white/10 px-10 bg-blue/75 text-white ease-in-out hover:bg-blue hover:border-white duration-300"
@@ -201,12 +198,10 @@ export default function Navbar() {
                       <li className="text-gray-800 pt-10">
                         <div className="flex items-center">
                           {active && (
-                            <Link href="https://joepegs.com/collections/0xcFd8402927f07A4D1e4DFe7f9C60f6EbF9Ed3673">
-                              <a target="_blank">
-                                <button className="cursor-pointer p-[16px] bg-blue/75 text-white/80 ease-in-out duration-300 hover:text-white/100">
-                                  View Moos
-                                </button>
-                              </a>
+                            <Link href="/moos">
+                              <button className="cursor-pointer p-[16px] bg-blue/75 text-white/80 ease-in-out duration-300 hover:text-white/100">
+                                View Moos
+                              </button>
                             </Link>
                           )}
                         </div>
@@ -222,10 +217,11 @@ export default function Navbar() {
                     </li>
                     <li className="text-gray-800 pt-2">
                       <div className="flex items-center">
-                        <button className="cursor-default p-[16px] backdrop-blur-lg rounded-xl  bg-blue/75 text-white/20 ease-in-out duration-300">
-                          Stake
-                          <small className="ml-2 text-white/100">SOON</small>
-                        </button>
+                        <Link href="https://stake.mooworld.io">
+                          <button className="cursor-pointer p-[16px] bg-blue/75 text-white/80 ease-in-out duration-300 hover:text-white/100">
+                            Stake
+                          </button>
+                        </Link>
                       </div>
                     </li>
                   </ul>
